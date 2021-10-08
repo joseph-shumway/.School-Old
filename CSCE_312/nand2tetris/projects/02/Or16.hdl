@@ -1,0 +1,25 @@
+// File: And16.hdl
+// Author: Joseph Shumway
+// Date: 9/14/2021
+// Section: 504
+// E-mail: joseph.shumway@tamu.edu 
+// Description: implements the following logic as a circuit: Or (16 bit) 
+// --------------------------------------------------------------
+
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Or16.hdl
+
+/**
+ * 16-bit bitwise Or:
+ * for i = 0..15 out[i] = (a[i] or b[i])
+ */
+
+CHIP Or16 {
+    IN a[16], b[16];
+    OUT out[16];
+
+    PARTS:
+    // Put your code here:
+}

@@ -1,0 +1,110 @@
+// File: LeftLogicBitshift
+// Author: Joseph SHumway
+// Date: 9/20/2021
+// Section: 504
+// E-mail: joseph.shumway@tamu.edu 
+// Description:
+// implements the barrel bit shifter chip
+
+/**
+ * Shift x left y bits, new bits are filled in with 0, you may not use any DFF or clocked chip in this implementation
+ * You may assume the maximum shift is 8-bit
+ */
+
+CHIP LeftLogicBitshift {
+    IN x[16], y[16];
+    OUT out[16];
+
+    PARTS:
+
+    
+   // Put your code here:
+
+   // construct always true gate:
+//    Xor16(a=x, b=y, out=w1);
+//    // create true
+//    Nor16(a=w1, b=w1, out[0]=True1);
+//    // create false
+//    Not(in=True1, out=fal);
+
+   // always false value
+   And(a=y[15], b=y[15], out=fal);
+   
+   
+   // begin barrel bitshift
+
+   // first set of muxes
+   Mux(a=x[0], b=fal, sel=y[0], out=level10);
+   Mux(a=x[1], b=x[0], sel=y[0], out=level11);
+   Mux(a=x[2], b=x[1], sel=y[0], out=level12);
+   Mux(a=x[3], b=x[2], sel=y[0], out=level13);
+   Mux(a=x[4], b=x[3], sel=y[0], out=level14);
+   Mux(a=x[5], b=x[4], sel=y[0], out=level15);
+   Mux(a=x[6], b=x[5], sel=y[0], out=level16);
+   Mux(a=x[7], b=x[6], sel=y[0], out=level17);
+   Mux(a=x[8], b=x[7], sel=y[0], out=level18);
+   Mux(a=x[9], b=x[8], sel=y[0], out=level19);
+   Mux(a=x[10], b=x[9], sel=y[0], out=level110);
+   Mux(a=x[11], b=x[10], sel=y[0], out=level111);
+   Mux(a=x[12], b=x[11], sel=y[0], out=level112);
+   Mux(a=x[13], b=x[12], sel=y[0], out=level113);
+   Mux(a=x[14], b=x[13], sel=y[0], out=level114);
+   Mux(a=x[15], b=x[14], sel=y[0], out=level115);
+
+   // second set of muxes
+   Mux(a=level10, b=fal, sel=y[1], out=level20);
+   Mux(a=level11, b=fal, sel=y[1], out=level21);
+   Mux(a=level12, b=level10, sel=y[1], out=level22);
+   Mux(a=level13, b=level11, sel=y[1], out=level23);
+   Mux(a=level14, b=level12, sel=y[1], out=level24);
+   Mux(a=level15, b=level13, sel=y[1], out=level25);
+   Mux(a=level16, b=level14, sel=y[1], out=level26);
+   Mux(a=level17, b=level15, sel=y[1], out=level27);
+   Mux(a=level18, b=level16, sel=y[1], out=level28);
+   Mux(a=level19, b=level17, sel=y[1], out=level29);
+   Mux(a=level110, b=level18, sel=y[1], out=level210);
+   Mux(a=level111, b=level19, sel=y[1], out=level211);
+   Mux(a=level112, b=level110, sel=y[1], out=level212);
+   Mux(a=level113, b=level111, sel=y[1], out=level213);
+   Mux(a=level114, b=level112, sel=y[1], out=level214);
+   Mux(a=level115, b=level113, sel=y[1], out=level215);
+
+   // third set of muxes
+   Mux(a=level20, b=fal, sel=y[2], out=level30);
+   Mux(a=level21, b=fal, sel=y[2], out=level31);
+   Mux(a=level22, b=fal, sel=y[2], out=level32);
+   Mux(a=level23, b=fal, sel=y[2], out=level33);
+   Mux(a=level24, b=level20, sel=y[2], out=level34);
+   Mux(a=level25, b=level21, sel=y[2], out=level35);
+   Mux(a=level26, b=level22, sel=y[2], out=level36);
+   Mux(a=level27, b=level23, sel=y[2], out=level37);
+   Mux(a=level28, b=level24, sel=y[2], out=level38);
+   Mux(a=level29, b=level25, sel=y[2], out=level39);
+   Mux(a=level210, b=level26, sel=y[2], out=level310);
+   Mux(a=level211, b=level27, sel=y[2], out=level311);
+   Mux(a=level212, b=level28, sel=y[2], out=level312);
+   Mux(a=level213, b=level29, sel=y[2], out=level313);
+   Mux(a=level214, b=level210, sel=y[2], out=level314);
+   Mux(a=level215, b=level211, sel=y[2], out=level315);
+
+   // fourth set of muxes
+   Mux(a=level30, b=fal, sel=y[3], out=out[0]);
+   Mux(a=level31, b=fal, sel=y[3], out=out[1]);
+   Mux(a=level32, b=fal, sel=y[3], out=out[2]);
+   Mux(a=level33, b=fal, sel=y[3], out=out[3]);
+   Mux(a=level34, b=fal, sel=y[3], out=out[4]);
+   Mux(a=level35, b=fal, sel=y[3], out=out[5]);
+   Mux(a=level36, b=fal, sel=y[3], out=out[6]);
+   Mux(a=level37, b=fal, sel=y[3], out=out[7]);
+   Mux(a=level38, b=level30, sel=y[3], out=out[8]);
+   Mux(a=level39, b=level31, sel=y[3], out=out[9]);
+   Mux(a=level310, b=level32, sel=y[3], out=out[10]);
+   Mux(a=level311, b=level33, sel=y[3], out=out[11]);
+   Mux(a=level312, b=level34, sel=y[3], out=out[12]);
+   Mux(a=level313, b=level35, sel=y[3], out=out[13]);
+   Mux(a=level314, b=level36, sel=y[3], out=out[14]);
+   Mux(a=level315, b=level37, sel=y[3], out=out[15]);
+
+   // wow what a lot of work
+   
+}

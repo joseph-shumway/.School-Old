@@ -1,0 +1,38 @@
+// File: And8Way.hdl
+// Author: Joseph Shumway
+// Date: 9/14/2021
+// Section: 504
+// E-mail: joseph.shumway@tamu.edu 
+// Description: implements the following logic as a circuit: And(8 way)
+// --------------------------------------------------------------
+
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/And8Way.hdl
+// Solution
+
+/**
+ * 8-way And: 
+ * out = (in[0] or in[1] or ... or in[7])
+ */
+
+CHIP And8Way {
+    IN in[8];
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+
+    // chain all ands together to get a result
+
+    And(a=in[0], b=in[1], out=w1);
+    And(a=w1, b=in[2], out=w2);
+    And(a=w2, b=in[3], out=w3);
+    And(a=w3, b=in[4], out=w4);
+    And(a=w4, b=in[5], out=w5);
+    And(a=w5, b=in[6], out=w6);
+    And(a=w6, b=in[7], out=out);
+    
+	
+}

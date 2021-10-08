@@ -1,0 +1,29 @@
+// File: Proposition1.hdl
+// Author: Joseph Shumway
+// Date: 9/14/2021
+// Section: 504
+// E-mail: joseph.shumway@tamu.edu 
+// Description: implements the following logic as a circuit: 
+// --------------------------------------------------------------
+
+// The application is not installed, and my computer is running
+
+// P = the application is installed
+// Q = my computer is running
+
+// (!P and Q)
+
+CHIP Proposition1 {
+    IN p, q;
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+    
+    // not p
+    Not(in=p, out=w1);
+
+    // not p and q
+    And(a=w1, b=q, out=out);
+    
+}
