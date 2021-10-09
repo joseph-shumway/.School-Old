@@ -3,6 +3,7 @@
 
 #include <iostream>
 #include <string>
+using std::string;
 
 class Record {
 private:
@@ -16,6 +17,10 @@ public:
     //accessor/mutator functions
     // std::string get_title(void) const;
     // ... for all 5 fields
+
+    string get_title();
+    string get_author();
+    string get_ISBN();
 };
 
 // Stream operators

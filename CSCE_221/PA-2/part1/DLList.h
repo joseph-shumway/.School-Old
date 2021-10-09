@@ -5,18 +5,22 @@
 
 #include <iostream>
 
-// doubly linked list class
-class DLList {
+
+class DLList { // doubly linked list class
 public:
-// doubly linked list node
-struct DLListNode {
+
+struct DLListNode { // doubly linked list node
   int obj;
   DLListNode *prev, *next;
+
   // constructor
-    DLListNode(int e=0, DLListNode *p=nullptr, DLListNode *n=nullptr): obj(e), prev(p), next(n){}
-};
+  DLListNode(int e=0, DLListNode *p=nullptr, DLListNode *n=nullptr): obj(e), prev(p), next(n){}};
+
+
 private:
   DLListNode header, trailer;
+
+
 public:
   DLList();
   DLList(const DLList& dll); // copy constructor
@@ -25,14 +29,10 @@ public:
   DLList& operator=(const DLList& dll); // copy assignment operator
   DLList& operator=(DLList&& dll); // move assignment operator
 
-  // return the pointer to the first node (header's next)
-  DLListNode *first_node() const;
+  DLListNode *first_node() const; // return the pointer to the first node (header's next)
+  const DLListNode *after_last_node() const; // return the pointer to the trailer
 
-  // return the pointer to the trailer
-  const DLListNode *after_last_node() const;
-
-  // return if the list is empty
-  bool is_empty() const;
+  bool is_empty() const; // return if the list is empty
   int first() const; // return the first object
   int last() const; // return the last object
   void insert_first(const int obj); // insert to the first node
@@ -44,9 +44,10 @@ public:
   int remove_after(DLListNode &p);
   int remove_before(DLListNode &p);
   void make_empty(void);
+  void print_list();
 };
 
-// output operator
-std::ostream& operator<<(std::ostream& out, const DLList& dll);
+
+std::ostream& operator<<(std::ostream& out, const DLList& dll); // output operator
 
 #endif
