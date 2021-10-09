@@ -1,0 +1,8 @@
+title="Function get_color() retrieves size"
+description="""
+The function get_color() returns the size of a stress ball represented by the enum class Stress_ball_sizes
+"""
+
+[adapters.gtest]
+name="GET_COLOR"
+testfile="get_color.cpp"

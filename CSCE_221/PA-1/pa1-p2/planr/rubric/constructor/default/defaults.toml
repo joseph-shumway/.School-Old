@@ -1,0 +1,10 @@
+description="""
+Default constructor of class Collection
+
+Test case:
+* Different ways to call default constructor of Collection class.
+
+If this case does not pass, you can check if:
+* Collection has a default constructor.
+* Definition of default constructor: size and capacity are 0, and array is null.
+"""

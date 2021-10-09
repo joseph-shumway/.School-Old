@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/is_empty.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/tests/is_empty.cpp.o CMakeFiles/is_empty.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Collection.cpp.o CMakeFiles/is_empty.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Stress_ball.cpp.o  -o is_empty  lib/libgtest_main.a lib/libgtest.a -lpthread 

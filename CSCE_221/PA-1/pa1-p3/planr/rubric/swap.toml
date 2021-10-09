@@ -1,0 +1,7 @@
+title="Swap"
+
+points=5.0
+
+[adapters.gtest]
+name="SWAP"
+testfile="swap.cpp"

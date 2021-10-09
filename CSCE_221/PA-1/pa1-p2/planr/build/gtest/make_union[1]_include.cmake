@@ -1,0 +1,5 @@
+if(EXISTS "/mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/make_union[1]_tests.cmake")
+  include("/mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/make_union[1]_tests.cmake")
+else()
+  add_test(make_union_NOT_BUILT make_union_NOT_BUILT)
+endif()

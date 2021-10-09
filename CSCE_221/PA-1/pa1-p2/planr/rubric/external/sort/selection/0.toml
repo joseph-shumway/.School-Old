@@ -1,0 +1,6 @@
+title="selection sort 0"
+points=3.0
+
+[adapters.gtest]
+name="SORT_SELECTION0"
+testfile="sort_selection.cpp"

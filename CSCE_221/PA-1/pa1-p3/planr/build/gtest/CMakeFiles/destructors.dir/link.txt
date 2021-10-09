@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/destructors.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p3/planr/tests/destructors.cpp.o CMakeFiles/destructors.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p3/src/Jeans.cpp.o CMakeFiles/destructors.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p3/src/Stress_ball.cpp.o  -o destructors  lib/libgtest_main.a lib/libgtest.a -lpthread 

@@ -1,0 +1,5 @@
+add_test( COLLECTION.COPY0 /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/copy_assignment [==[--gtest_filter=COLLECTION.COPY0]==] --gtest_also_run_disabled_tests)
+set_tests_properties( COLLECTION.COPY0 PROPERTIES WORKING_DIRECTORY /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest)
+add_test( COLLECTION.COPY1 /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/copy_assignment [==[--gtest_filter=COLLECTION.COPY1]==] --gtest_also_run_disabled_tests)
+set_tests_properties( COLLECTION.COPY1 PROPERTIES WORKING_DIRECTORY /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest)
+set( copy_assignment_TESTS COLLECTION.COPY0 COLLECTION.COPY1)

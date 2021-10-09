@@ -1,0 +1,8 @@
+# This is used to evaluate your code for memory leaks
+# You won't need to edit this unless you restructure your src directory
+
+test: Collection.cpp Collection.h Stress_ball.cpp Stress_ball.h sample_main.cpp
+	g++ -o test -fsanitize=address -std=c++17 Collection.cpp Stress_ball.cpp sample_main.cpp
+
+run: test
+	./test

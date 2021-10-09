@@ -1,0 +1,21 @@
+description="""
+remove a stress ball with a specific color and size from the collection:
+void remove_this_item(const Stress_ball& sb);
+Do not decrease the capacity of the array. Also, be sure that there are no gaps between elements of
+the array. Throw an exception if the collection is already empty.
+
+Test case:
+* Create a collection and insert using insert items
+* Removing objects
+* Emptying whole collection.
+* Removing a non-existent object.
+
+If this case does not pass, you can check if:
+* Collection constructor is defined.
+* insert_items, remove_this_item, make empty, total_items functions are defined.
+* What happens when an object that is not in Collection is removed?
+* What happens when an object is removed from an empty collection
+* Difference in number of objects before and after removing the object
+* Only the first occurrence of object is removed?
+* Have you used throw() in case of empty collection?
+"""

@@ -1,0 +1,9 @@
+title="Default Constructor"
+
+description="""
+The class default constructor creates a stress ball with a randomly selected color and size, every time the constructor is called. Use only the following colors: red, blue, yellow, and green, and sizes: small, medium, and large. Use the enum class Stress_ball_colors to define colors and the enum class Stress_ball_sizes for sizes.
+"""
+
+[adapters.gtest]
+name="DEFAULT_CONSTRUCTOR"
+testfile="default_constructor.cpp"

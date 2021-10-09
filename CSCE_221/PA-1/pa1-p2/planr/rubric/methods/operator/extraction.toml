@@ -1,0 +1,22 @@
+title="Extraction operator <<"
+description="""
+output operator:
+ostream& operator <<(ostream& os, const Collection& c);
+prints to the ostream os all the collection items in format: (color, size), each in one line. Use cout as
+output but you should be able to output to a file as well.
+
+Test case:
+* Collection object is created.
+* items are inserted with insert_item()
+* << operator is used to write contents from  collection object to file
+
+If this case does not pass, you can check if:
+* Collection constructor is well defined.
+* In your compiler, output to a sample file and print to check if the contents of the file and object match.
+* insert_item() , stess_ball constructors are working properly.
+"""
+points=4.0
+
+[adapters.gtest]
+name="EXTRACTION"
+testfile="extraction.cpp"

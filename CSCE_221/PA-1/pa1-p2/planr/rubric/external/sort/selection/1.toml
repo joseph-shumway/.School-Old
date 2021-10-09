@@ -1,0 +1,5 @@
+title="selection sort 1"
+
+[adapters.gtest]
+name="SORT_SELECTION1"
+testfile="sort_selection.cpp"

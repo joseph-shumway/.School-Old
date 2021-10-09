@@ -1,0 +1,5 @@
+title="copy assignment 0"
+
+[adapters.gtest]
+name="COPY0"
+testfile="copy_assignment.cpp"

@@ -1,0 +1,20 @@
+title="contains()"
+description="""
+check if a stress ball of a given color and size is in the collection; return true if it is there and false
+otherwise:
+bool contains(const Stress_ball& sb) const;
+
+Test case:
+* Collection object is created.
+* items are inserted with insert_item()
+* contains() reveals whether a given Stress_Ball is part of the Collection object
+
+If this case does not pass, you can check if:
+* Collection constructor is well defined.
+* insert_item() , stess_ball constructors are working properly.
+"""
+points=0.2
+
+[adapters.gtest]
+name="CONTAINS"
+testfile="contains.cpp"

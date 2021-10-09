@@ -1,0 +1,8 @@
+title="No memory leaks"
+description="No memory leads are present in the main() script"
+adapter = "bash"
+points=8.0
+
+[adapters.bash]
+testfile="memory.bash"
+timeout=20000

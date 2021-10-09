@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Collection.cpp
+Collection.h
+/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Collection.h
+Stress_ball.h
+/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Stress_ball.h
+
+/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Collection.h
+exception
+-
+string
+-
+iostream
+-
+Stress_ball.h
+/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Stress_ball.h
+
+/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Stress_ball.h
+iostream
+-
+string
+-
+

@@ -1,0 +1,5 @@
+title="insert_item() 1"
+
+[adapters.gtest]
+name="INSERT_ITEM1"
+testfile="insert_item.cpp"

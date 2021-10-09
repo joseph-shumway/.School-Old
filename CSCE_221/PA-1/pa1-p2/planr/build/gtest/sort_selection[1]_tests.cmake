@@ -1,0 +1,7 @@
+add_test( COLLECTION.SORT_SELECTION0 /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/sort_selection [==[--gtest_filter=COLLECTION.SORT_SELECTION0]==] --gtest_also_run_disabled_tests)
+set_tests_properties( COLLECTION.SORT_SELECTION0 PROPERTIES WORKING_DIRECTORY /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest)
+add_test( COLLECTION.SORT_SELECTION1 /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/sort_selection [==[--gtest_filter=COLLECTION.SORT_SELECTION1]==] --gtest_also_run_disabled_tests)
+set_tests_properties( COLLECTION.SORT_SELECTION1 PROPERTIES WORKING_DIRECTORY /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest)
+add_test( COLLECTION.SORT_SELECTION2 /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/sort_selection [==[--gtest_filter=COLLECTION.SORT_SELECTION2]==] --gtest_also_run_disabled_tests)
+set_tests_properties( COLLECTION.SORT_SELECTION2 PROPERTIES WORKING_DIRECTORY /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest)
+set( sort_selection_TESTS COLLECTION.SORT_SELECTION0 COLLECTION.SORT_SELECTION1 COLLECTION.SORT_SELECTION2)

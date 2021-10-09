@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/move.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/tests/move.cpp.o CMakeFiles/move.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Collection.cpp.o CMakeFiles/move.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Stress_ball.cpp.o  -o move  lib/libgtest_main.a lib/libgtest.a -lpthread 
