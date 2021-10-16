@@ -9,11 +9,16 @@
 @R0
 D=M
 
-@END
+// set R2 to 0
+@R2
+M=0
+
+// check if dividend is 0 and end if so
+@R0
+D=M
+
+@ENDZERO
 D;JEQ
-
-
-
 
 
 (LOOP1)
@@ -25,37 +30,39 @@ D;JEQ
     @R1
     D=D-M
 
-    // check divisor less than dividend. Jump to END if so.
+    // check dividend less than divisor. Jump to END if so.
     @END
-    D;JGE
-
-    // now reset values and do division
-    // grab dividend
-    @R0
-    D=M
-
-    // get divisor and subtract from dividend. Set new dividend
-    @R1
-    D=D-M
-    @R0
-    M=D
+    D;JLT
 
     // increase count
     @R2
     M=M+1
 
+    // now reset values and do division
+    // get divisor value and give to D register
+    @R1
+    D=M
+
+    // D = dividend - divisor
+    @R0
+    M=M-D
+
     @LOOP1
     0;JMP
 
+
 (END)
 
-    // get count
-    @count
-    D=M
-
-    // set R2 to value in count
-    @R2
-    M=D
-
+    // end
     @END
+    0;JMP
+
+
+(ENDZERO)
+
+    // set R2 to 0 first
+    @R2
+    M=0
+
+    @ENDZERO
     0;JMP
