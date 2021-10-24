@@ -28,4 +28,29 @@ CHIP Memory {
 
     PARTS:
     // Put your code here:
+    
+    // first choose the right chip to load based on address
+    DMux4Way(in=load, sel=address[13..14], a=RAMpart1, b=RAMpart2, c=screen, d=keyboard);
+
+    // next since we have ram for addresses spanning past what a single part of DMux4way has, we need 
+    // to combine two parts
+    Or(a=RAMpart1, b=RAMpart2, out=RAMcombined);
+    
+    // implement the RAM chip
+    RAM16K(in=in, load=RAMcombined, address=address[0..13], out=RAMoutput);
+    
+    // implement the screen next
+    Screen(in=in, load=screen, address=address[0..12], out=SCREENoutput);
+
+    // implement the keyboard next
+    Keyboard(out=KEYBOARDoutput);
+
+    // recombine the input using the output of the chip parts
+    Mux4Way16(a=RAMoutput, b=RAMoutput, c=SCREENout, d=KEYBOARDout, sel=address[13..14], out=out);
+    
+    
+    
+
+
+
 }
