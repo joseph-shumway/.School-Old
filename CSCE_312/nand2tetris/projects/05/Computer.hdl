@@ -1,3 +1,11 @@
+// File: Computer.hdl
+// Author: Joseph Shumway
+// Date: 10/25/2021
+// Section: 504
+// E-mail: joseph.shumway@tamu.edu 
+// Description:
+// this file implements the computer chip using memory, cpu, and rom chips
+
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
@@ -20,4 +28,16 @@ CHIP Computer {
 
     PARTS:
     // Put your code here:
+
+
+    // put all the pieces together 
+    ROM32K(address=toROM, out=toCPU);
+    
+
+    CPU(inM=outToCPU, instruction=toCPU, reset=reset, outM=toRAM, writeM=WriteToRAM, addressM=AddressToRAM, pc=toROM);
+    
+
+    Memory(in=toRAM, load=WriteToRAM, address=AddressToRAM, out=outToCPU);
+    
+
 }

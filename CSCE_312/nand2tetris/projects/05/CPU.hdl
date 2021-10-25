@@ -1,3 +1,11 @@
+// File: CPU.hdl
+// Author: Joseph Shumway
+// Date: 10/25/2021
+// Section: 504
+// E-mail: joseph.shumway@tamu.edu 
+// Description:
+// this file implements the CPU chip
+
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
@@ -79,26 +87,35 @@ CHIP CPU {
     // get JGT
     And(a=instruction[15], b=instruction[0], out=JGT);
     
-    // first condition to load PC
-    And(a=positive, b=notZero, out=loadPC1);
-    
-    // get JEQ
-    And(a=instruction[15], b=instruction[1], out=JEQ);
+    // check if positive and not zero
+    And(a=positive, b=notZero, out=PositiveAndNotZero);
 
-    // second condition to load PC
-    And(a=JEQ, b=zr, out=loadPC2);
+    // first condition to load PC
+    And(a=JGT, b=PositiveAndNotZero, out=loadPC1);
 
     // get JLT
     And(a=instruction[15], b=instruction[2], out=JLT);
 
+    // second condition to load PC
+    And(a=JLT, b=ng, out=loadPC2);
+
+    // get JEQ
+    And(a=instruction[15], b=instruction[1], out=JEQ);
+
     // third condition to load PC
-    And(a=JLT, b=ng, out=loadPC3);
+    And(a=JEQ, b=zr, out=loadPC3);
+
+
+
+
+
+
 
     // check if any load conditions are true for PC
     Or(a=loadPC1, b=loadPC2, out=loadPCpart1);
     Or(a=loadPCpart1, b=loadPC3, out=loadPC);
     
-    PC(in=A, load=loadPC, inc=true, reset=reset, out[0..14]=pc);
+    PC(in=outA, load=loadPC, inc=true, reset=reset, out[0..14]=pc);
     
     
 }

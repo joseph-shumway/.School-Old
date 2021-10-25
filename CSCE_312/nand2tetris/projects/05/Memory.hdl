@@ -1,3 +1,11 @@
+// File: Memory.hdl
+// Author: Joseph Shumway
+// Date: 10/25/2021
+// Section: 504
+// E-mail: joseph.shumway@tamu.edu 
+// Description:
+// this file implements the memory chip
+
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
@@ -46,7 +54,7 @@ CHIP Memory {
     Keyboard(out=KEYBOARDoutput);
 
     // recombine the input using the output of the chip parts
-    Mux4Way16(a=RAMoutput, b=RAMoutput, c=SCREENout, d=KEYBOARDout, sel=address[13..14], out=out);
+    Mux4Way16(a=RAMoutput, b=RAMoutput, c=SCREENoutput, d=KEYBOARDoutput, sel=address[13..14], out=out);
     
     
     
