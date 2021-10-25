@@ -39,5 +39,53 @@ CHIP CPU {
         pc[15];          // address of next instruction
 
     PARTS:
-    // Put your code here:
+    
+    //--------------- y input of ALU ------------------
+
+    // choose if A or C instruction
+    Not(in=instruction[15], out=notAInstruction);
+    Mux16(a=dataOut, b=instruction, sel=notAInstruction, out=toARegister);
+
+    // load A register. Outputs either A or M depending on if A instruction or C instruction
+    Or(a=notAInstruction, b=instruction[5], out=loadARegister);
+    ARegister(in=toARegister, load=loadARegister, out=outA, out[0..14]=addressM);
+
+    // if C instruction, choose a or m from instruction 12
+    And(a=instruction[12], b=instruction[15], out=AinAndChooseM);
+    Mux16(a=outA, b=inM, sel=AinAndChooseM, out=AorM);
+
+    //----------------x input of ALU ---------------------
+
+    // load D register. Make sure c instruction first
+    And(a=instruction[4], b=instruction[15], out=toDRegister);
+    DRegister(in=dataOut, load=toDRegister, out=outD);
+
+
+    //---------------------- ALU --------------------------
+
+    ALU(x=outD, y=AorM, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=dataOut, out=outM, zr=zr, ng=ng);
+    
+    //----------------------
+
+
+
+
+
+
+
+
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+    ALU(x=, y=, zx=, nx=, zy=, ny=, f=, no=, out=, zr=, ng=);
+    
 }
