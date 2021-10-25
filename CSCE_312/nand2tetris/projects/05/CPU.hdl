@@ -65,27 +65,40 @@ CHIP CPU {
 
     ALU(x=outD, y=AorM, zx=instruction[11], nx=instruction[10], zy=instruction[9], ny=instruction[8], f=instruction[7], no=instruction[6], out=dataOut, out=outM, zr=zr, ng=ng);
     
-    //----------------------
+    //-----------------------------------------------------
 
-
-
-
-
-
-
-
+    // write to M?
+    And(a=instruction[15], b=instruction[3], out=writeM);
     
+    //----------------------- PC --------------------------
     
+    // get if positive or not zero
+    Not(in=ng, out=positive);
+    Not(in=zr, out=notZero);
+
+    // get JGT
+    And(a=instruction[15], b=instruction[0], out=JGT);
     
-
+    // first condition to load PC
+    And(a=positive, b=notZero, out=loadPC1);
     
+    // get JEQ
+    And(a=instruction[15], b=instruction[1], out=JEQ);
+
+    // second condition to load PC
+    And(a=JEQ, b=zr, out=loadPC2);
+
+    // get JLT
+    And(a=instruction[15], b=instruction[2], out=JLT);
+
+    // third condition to load PC
+    And(a=JLT, b=ng, out=loadPC3);
+
+    // check if any load conditions are true for PC
+    Or(a=loadPC1, b=loadPC2, out=loadPCpart1);
+    Or(a=loadPCpart1, b=loadPC3, out=loadPC);
     
-
-
-
-
-
-
-    ALU(x=, y=, zx=, nx=, zy=, ny=, f=, no=, out=, zr=, ng=);
+    PC(in=A, load=loadPC, inc=true, reset=reset, out[0..14]=pc);
+    
     
 }
