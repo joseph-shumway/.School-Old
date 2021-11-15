@@ -1,1 +1,1 @@
-M=A-D;JMP
+AM = D|A;JLT
