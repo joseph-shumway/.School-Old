@@ -1,6 +1,0 @@
-title="remove() 1"
-points=2.0
-
-[adapters.gtest]
-name="REMOVE1"
-testfile="remove.cpp"

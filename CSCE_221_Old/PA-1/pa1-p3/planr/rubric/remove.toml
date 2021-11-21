@@ -1,0 +1,7 @@
+title="Remove"
+
+points=5.0
+
+[adapters.gtest]
+name="REMOVE"
+testfile="remove.cpp"

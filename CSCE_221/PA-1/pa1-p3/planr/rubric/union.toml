@@ -1,7 +1,0 @@
-title="Union"
-
-points=5.0
-
-[adapters.gtest]
-name="UNION"
-testfile="union.cpp"

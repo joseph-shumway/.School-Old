@@ -1,5 +1,0 @@
-title="Default constructors with no argument"
-
-[adapters.gtest]
-name="NO_ARGUMENTS"
-testfile="no_arguments.cpp"

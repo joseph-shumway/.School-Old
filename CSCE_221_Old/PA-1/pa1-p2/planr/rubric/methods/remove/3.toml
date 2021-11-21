@@ -1,0 +1,5 @@
+title="remove() 3"
+
+[adapters.gtest]
+name="REMOVE3"
+testfile="remove.cpp"

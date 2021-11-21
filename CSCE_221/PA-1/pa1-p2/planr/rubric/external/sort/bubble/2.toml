@@ -1,5 +1,0 @@
-title="Bubble Sort 2"
-
-[adapters.gtest]
-name="BUBBLE2"
-testfile="sort_bubble.cpp"

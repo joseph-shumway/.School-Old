@@ -1,9 +1,0 @@
-title="Example Title"
-description="""
-Example description
-"""
-points=0.2
-
-[adapters.gtest]
-name="IS_EMPTY"
-testfile="is_empty.cpp"

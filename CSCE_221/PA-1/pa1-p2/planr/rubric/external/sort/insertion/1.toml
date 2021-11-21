@@ -1,5 +1,0 @@
-title="Insertion Sort 1"
-
-[adapters.gtest]
-name="SORT_INSERTION1"
-testfile="sort_insertion.cpp"

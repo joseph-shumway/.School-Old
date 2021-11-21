@@ -1,0 +1,9 @@
+title="Parametrized Constructor"
+
+description="""
+The class parameterized constructor creates a stress ball with a given color and size dictated by the respective enum class values: `Stress_ball(Stress_ball_colors c, Stress_ball_sizes s)`
+"""
+
+[adapters.gtest]
+name="PARAMETRIZED_CONSTRUCTOR"
+testfile="parametrized_constructor.cpp"

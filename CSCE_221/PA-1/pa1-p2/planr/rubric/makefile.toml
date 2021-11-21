@@ -1,8 +1,0 @@
-title="Makefile"
-description="Makefile generates test executable via build script"
-adapter = "bash"
-points=3.0
-
-[adapters.bash]
-testfile="makefile.bash"
-timeout=20000

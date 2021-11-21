@@ -1,0 +1,5 @@
+title="total_items()"
+
+[adapters.gtest]
+name="TOTAL_ITEMS"
+testfile="total_items.cpp"

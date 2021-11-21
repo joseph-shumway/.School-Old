@@ -1,7 +1,0 @@
-title="Total Items"
-
-points=5.0
-
-[adapters.gtest]
-name="TOTAL_ITEMS"
-testfile="total_items.cpp"

@@ -1,5 +1,0 @@
-title="remove() 4"
-
-[adapters.gtest]
-name="REMOVE4"
-testfile="remove.cpp"

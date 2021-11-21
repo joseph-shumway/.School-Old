@@ -1,7 +1,0 @@
-title="Test the stream operators"
-
-points=10.0
-
-[adapters.gtest]
-name="STREAM_OPERATORS"
-testfile="stream_operators.cpp"

@@ -1,0 +1,7 @@
+# Setup defaults (applies to all tests)
+points=5.0
+adapter="gtest"
+
+[adapters.gtest]
+suite="SB"
+srcs=["Stress_ball.cpp"]

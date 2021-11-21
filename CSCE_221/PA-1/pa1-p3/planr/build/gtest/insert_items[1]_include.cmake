@@ -1,5 +1,0 @@
-if(EXISTS "/mnt/c/.School/CSCE_221/PA-1/pa1-p3/planr/build/gtest/insert_items[1]_tests.cmake")
-  include("/mnt/c/.School/CSCE_221/PA-1/pa1-p3/planr/build/gtest/insert_items[1]_tests.cmake")
-else()
-  add_test(insert_items_NOT_BUILT insert_items_NOT_BUILT)
-endif()

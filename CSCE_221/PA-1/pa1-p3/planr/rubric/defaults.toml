@@ -1,8 +1,0 @@
-adapter="gtest"
-points=1.0
-
-[adapters.gtest]
-suite="COLLECTION"
-srcs=[ "Jeans.cpp", "Stress_ball.cpp" ]
-timeout=20000
-compiler_options="-Wextra -Wall -pedantic -Werror -Wno-error=unused-parameter"

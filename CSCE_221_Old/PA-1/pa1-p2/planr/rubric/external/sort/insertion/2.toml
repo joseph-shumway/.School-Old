@@ -1,0 +1,6 @@
+title="Insertion Sort 2"
+
+[adapters.gtest]
+name="SORT_INSERTION2"
+testfile="sort_insertion.cpp"
+

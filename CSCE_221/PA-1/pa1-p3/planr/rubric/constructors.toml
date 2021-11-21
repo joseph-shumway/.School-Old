@@ -1,7 +1,0 @@
-title="Default constructors with no argument"
-
-points=1.0
-
-[adapters.gtest]
-name="CONSTRUCTORS"
-testfile="constructors.cpp"

@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/insert_item.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/tests/insert_item.cpp.o CMakeFiles/insert_item.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Collection.cpp.o CMakeFiles/insert_item.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Stress_ball.cpp.o  -o insert_item  lib/libgtest_main.a lib/libgtest.a -lpthread 

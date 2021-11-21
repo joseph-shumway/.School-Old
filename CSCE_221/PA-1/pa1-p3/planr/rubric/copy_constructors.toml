@@ -1,7 +1,0 @@
-title="Copy constructors"
-
-points=2.0
-
-[adapters.gtest]
-name="COPY_CONSTRUCTORS"
-testfile="copy_constructors.cpp"

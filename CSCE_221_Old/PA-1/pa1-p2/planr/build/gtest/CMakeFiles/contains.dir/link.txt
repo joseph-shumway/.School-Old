@@ -1,0 +1,1 @@
+/usr/bin/c++    -rdynamic CMakeFiles/contains.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/tests/contains.cpp.o CMakeFiles/contains.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Collection.cpp.o CMakeFiles/contains.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Stress_ball.cpp.o  -o contains  lib/libgtest_main.a lib/libgtest.a -lpthread 

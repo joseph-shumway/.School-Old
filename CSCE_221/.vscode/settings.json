@@ -57,6 +57,14 @@
         "typeinfo": "cpp",
         "variant": "cpp",
         "typeindex": "cpp",
-        "bitset": "cpp"
+        "bitset": "cpp",
+        "strstream": "cpp",
+        "codecvt": "cpp",
+        "complex": "cpp",
+        "condition_variable": "cpp",
+        "mutex": "cpp",
+        "thread": "cpp",
+        "cfenv": "cpp",
+        "cinttypes": "cpp"
     }
 }

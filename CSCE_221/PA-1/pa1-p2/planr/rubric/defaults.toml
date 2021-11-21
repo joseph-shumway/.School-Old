@@ -1,8 +1,0 @@
-adapter="gtest"
-points=1.0
-
-[adapters.gtest]
-suite="COLLECTION"
-srcs=[ "Collection.cpp", "Stress_ball.cpp" ]
-timeout=5000
-compiler_options="-Wextra -Werror -Wall -pedantic"

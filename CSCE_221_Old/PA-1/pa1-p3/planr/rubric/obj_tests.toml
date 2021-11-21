@@ -1,0 +1,7 @@
+title="Objects - Stress ball and Jeans"
+
+points=20.0
+
+[adapters.gtest]
+name="OBJECTS"
+testfile="objects.cpp"

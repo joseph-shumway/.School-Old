@@ -1,0 +1,15 @@
+description="""
+move constructor – efficiently creates a new collection from an existing one (without copying aka
+shallow copy)
+
+Test case:
+* Empty collection is created. 
+* N number of Stress_ball() is/are inserted using insert_item().
+* Move constructor is called and checked if the data is getting moved.
+
+If this case does not pass, you can check if:
+* Collections have default constructor which accepts capacity as argument.
+* Move constructor, insert_item(), is_empty(), total_items() are defined and working.
+* What happens with memory locations when a move constructor is used. Are they same or different?
+* Should the object that is passed to the constructor be empty after constructor's operation is completed?
+"""

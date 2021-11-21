@@ -1,6 +1,0 @@
-title="Insertion Sort 0"
-points=3.0
-
-[adapters.gtest]
-name="SORT_INSERTION0"
-testfile="sort_insertion.cpp"

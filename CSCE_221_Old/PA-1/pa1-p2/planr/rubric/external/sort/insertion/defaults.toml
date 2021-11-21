@@ -1,0 +1,23 @@
+description="""
+A sort function that sorts the collection with respect to the size of its elements (small < medium <
+large):
+void sort_by_size(Collection& c, Sort_choice sort);
+Then elements will be sorted with respect to their size in array (we do not sort them with respect to
+color). You need to implement 3 different sorting algorithms (do not use the STL sort): bubble sort,
+insertion sort, and selection sort. Here is the enum class Sort_choice:
+enum class Sort_choice { bubble_sort, insertion_sort, selection_sort };
+Use a switch/case statement to choose the required one. You need to provide testing for all three sort
+functions.
+
+
+Test case:
+* Collection object is created.
+* Items are inserted using insert_items()
+
+If this case does not pass, you can check if:
+* Collections have default constructors.
+* insert_item, resize, total_items, constructors, assignment functions work properly
+* Is the sort working fine in best, random and worst case in your compiler?
+* Parameterized constructor of Stress_ball is defined properly.
+"""
+points=2.0

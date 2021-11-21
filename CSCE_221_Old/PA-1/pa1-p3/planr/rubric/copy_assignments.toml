@@ -1,0 +1,7 @@
+title="Copy Assignments"
+
+points=2.0
+
+[adapters.gtest]
+name="COPY_ASSIGNMENTS"
+testfile="copy_assignment.cpp"

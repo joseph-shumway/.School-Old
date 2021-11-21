@@ -1,7 +1,0 @@
-title="Operator[]"
-
-points=5.0
-
-[adapters.gtest]
-name="OPERATOR_BRK"
-testfile="operator_brk.cpp"

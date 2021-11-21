@@ -1,5 +1,0 @@
-title="total_items() - color"
-
-[adapters.gtest]
-name="TOTAL_ITEMS_COLOR"
-testfile="total_items.cpp"

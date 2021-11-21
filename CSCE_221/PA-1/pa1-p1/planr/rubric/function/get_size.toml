@@ -1,8 +1,0 @@
-title="Function get_size() retrieves size"
-description="""
-The function get_size() returns the size of a stress ball represented by the enum class Stress_ball_sizes
-"""
-
-[adapters.gtest]
-name="GET_SIZE"
-testfile="get_size.cpp"

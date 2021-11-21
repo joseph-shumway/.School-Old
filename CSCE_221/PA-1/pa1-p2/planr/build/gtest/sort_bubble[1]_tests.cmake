@@ -1,7 +1,0 @@
-add_test( COLLECTION.BUBBLE0 /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/sort_bubble [==[--gtest_filter=COLLECTION.BUBBLE0]==] --gtest_also_run_disabled_tests)
-set_tests_properties( COLLECTION.BUBBLE0 PROPERTIES WORKING_DIRECTORY /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest)
-add_test( COLLECTION.BUBBLE1 /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/sort_bubble [==[--gtest_filter=COLLECTION.BUBBLE1]==] --gtest_also_run_disabled_tests)
-set_tests_properties( COLLECTION.BUBBLE1 PROPERTIES WORKING_DIRECTORY /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest)
-add_test( COLLECTION.BUBBLE2 /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/sort_bubble [==[--gtest_filter=COLLECTION.BUBBLE2]==] --gtest_also_run_disabled_tests)
-set_tests_properties( COLLECTION.BUBBLE2 PROPERTIES WORKING_DIRECTORY /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest)
-set( sort_bubble_TESTS COLLECTION.BUBBLE0 COLLECTION.BUBBLE1 COLLECTION.BUBBLE2)

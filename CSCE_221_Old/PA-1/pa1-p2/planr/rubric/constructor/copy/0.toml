@@ -1,0 +1,5 @@
+title="Copy constructor 0"
+
+[adapters.gtest]
+name="COPY0"
+testfile="copy_constructor.cpp"

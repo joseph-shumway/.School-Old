@@ -1,0 +1,7 @@
+title="Various Sorting Algorithms"
+
+points=10.0
+
+[adapters.gtest]
+name="SORTS"
+testfile="sorts.cpp"

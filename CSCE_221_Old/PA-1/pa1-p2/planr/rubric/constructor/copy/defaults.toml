@@ -1,0 +1,14 @@
+description="""
+copy constructor – makes a copy of a collection (aka deep copy)
+
+Test case:
+* Empty collection is created. 
+* N number of Stress_ball() is/are inserted using insert_item().
+* Copy constructor is called and checked if the data is getting copied.
+
+If this case does not pass, you can check if:
+* Collections have default constructor which accepts capacity as argument.
+* Copy constructor, insert_item(), total_items() are defined and working.
+* total_items of the object that is copied is same as the original object.
+* What happens with memory locations  of objects when a copy constructor is used. Are they same or different?
+"""
