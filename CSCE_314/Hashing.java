@@ -229,7 +229,8 @@ public class Hashing {
             // print all Nodes that have equal PT and YT values inorder
             writeEqualHelper(r.getLeft(), out);
             if (r.getData().getCountPT() == r.getData().getCountYT()) {
-                out.write(r.getData().getValue() + "\n");
+                String output = String.format("%-14s%8s%n", r.getData().getValue(), r.getData().getCountPT());
+                out.write(output);
             }
             
             writeEqualHelper(r.getRight(), out);
@@ -329,10 +330,6 @@ public class Hashing {
                 out.write(output);
 
                 outNum.setLength(0);
-            }
-
-            if (r.getData().getCountPT() != r.getData().getCountYT()) {
-                out.write(r.getData().getValue() + "\n");
             }
             
             writeDifferenceHelper(r.getRight(), out);
