@@ -1,0 +1,1108 @@
+a             +16 YT        
+a
+able          +1 PT         
+able
+about         +1 PT         
+about
+access        +1 YT         
+access
+acts          +1 PT - ZERO  
+acts
+actually      +1 PT         
+actually
+ad            +1 PT - ZERO  
+ad
+addition      +1 PT - ZERO  
+addition
+after         +1 PT         
+after
+afterwards    +1 PT - ZERO  
+afterwards
+again         +3 PT         
+again
+agrowill      +1 PT - ZERO  
+agrowill
+ahead         +1 YT         
+ahead
+all           +4 YT         
+all
+almost        +1 YT - ZERO  
+almost
+along         +2 YT         
+along
+alright       +1 YT - ZERO  
+alright
+also          +3 YT         
+also
+although      +1 PT - ZERO  
+although
+always        +1 YT         
+always
+am            +1 YT         
+am
+amane         +1 PT - ZERO  
+amane
+amazed        +1 PT - ZERO  
+amazed
+amazing       +1 YT - ZERO  
+amazing
+an            +3 YT         
+an
+and           +20 PT        
+and
+angled        +1 YT - ZERO  
+angled
+anglophiles   +1 PT - ZERO  
+anglophiles
+animal        +1 PT - ZERO  
+animal
+another       +2 YT         
+another
+answer        +2 YT         
+answer
+any           +1 YT         
+any
+anything      +1 YT         
+anything
+anyway        +1 YT         
+anyway
+arbutus       +1 YT - ZERO  
+arbutus
+are           +2 PT         
+are
+around        +1 PT         
+around
+as            +4 PT         
+as
+ask           +2 PT         
+ask
+asked         +2 YT         
+asked
+asks          +1 YT - ZERO  
+asks
+ass           +1 PT - ZERO  
+ass
+assume        +1 PT         
+assume
+at            +2 PT         
+at
+attendant     +1 YT - ZERO  
+attendant
+b             +2 YT         
+b
+back          +3 YT         
+back
+background    +1 PT - ZERO  
+background
+backpack      +1 YT - ZERO  
+backpack
+backup        +1 PT         
+backup
+bad           +1 YT         
+bad
+bar           +1 YT - ZERO  
+bar
+barbara       +1 PT - ZERO  
+barbara
+barred        +1 PT - ZERO  
+barred
+bat           +1 YT - ZERO  
+bat
+be            +2 YT         
+be
+bear          +2 YT - ZERO  
+bear
+been          +1 YT         
+been
+before        +1 YT         
+before
+bet           +3 YT         
+bet
+big           +1 PT         
+big
+bill          +1 PT - ZERO  
+bill
+bloc          +1 PT - ZERO  
+bloc
+block         +1 YT         
+block
+blocks        +1 YT         
+blocks
+blog          +1 PT - ZERO  
+blog
+book          +1 YT - ZERO  
+book
+bought        +1 PT - ZERO  
+bought
+boxes         +1 YT - ZERO  
+boxes
+breaking      +1 YT         
+breaking
+bring         +1 PT - ZERO  
+bring
+brought       +1 YT - ZERO  
+brought
+budget        +1 PT - ZERO  
+budget
+build         +2 YT         
+build
+but           +8 YT         
+but
+bye           +1 YT - ZERO  
+bye
+c             +7 YT - ZERO  
+c
+c++           +1 PT - ZERO  
+c++
+cac           +1 PT - ZERO  
+cac
+call          +3 PT         
+call
+called        +6 YT         
+called
+calling       +1 YT         
+calling
+can           +8 YT         
+can
+card          +1 PT - ZERO  
+card
+cases         +1 PT - ZERO  
+cases
+causing       +1 PT - ZERO  
+causing
+cbd           +1 PT - ZERO  
+cbd
+change        +1 YT         
+change
+changed       +2 YT         
+changed
+chern         +1 PT - ZERO  
+chern
+chest         +1 PT - ZERO  
+chest
+choice        +1 PT - ZERO  
+choice
+circuit       +1 PT - ZERO  
+circuit
+cleared       +1 PT - ZERO  
+cleared
+clue          +1 PT - ZERO  
+clue
+coat          +1 PT - ZERO  
+coat
+code          +2 YT         
+code
+coke          +3 YT         
+coke
+cole          +1 YT - ZERO  
+cole
+come          +1 PT         
+come
+coming        +1 YT - ZERO  
+coming
+comma         +1 YT         
+comma
+common        +1 PT         
+common
+computer      +1 PT - ZERO  
+computer
+concept       +1 YT - ZERO  
+concept
+conscience    +1 PT - ZERO  
+conscience
+cool          +1 PT - ZERO  
+cool
+creating      +1 YT         
+creating
+credit        +1 PT - ZERO  
+credit
+d             +1 YT - ZERO  
+d
+day           +1 PT         
+day
+dead          +1 YT - ZERO  
+dead
+deaf          +2 PT - ZERO  
+deaf
+dealt         +1 PT - ZERO  
+dealt
+death         +1 PT - ZERO  
+death
+declared      +1 YT         
+declared
+def           +4 YT         
+def
+define        +1 YT         
+define
+definitely    +1 PT         
+definitely
+depth         +1 YT - ZERO  
+depth
+describe      +1 PT - ZERO  
+describe
+describes     +1 YT - ZERO  
+describes
+desk          +1 PT - ZERO  
+desk
+deverill      +1 PT - ZERO  
+deverill
+didn't        +1 PT         
+didn't
+division      +1 PT - ZERO  
+division
+do            +7 YT         
+do
+does          +4 YT         
+does
+doesn't       +1 YT         
+doesn't
+doing         +1 PT         
+doing
+domain        +1 YT - ZERO  
+domain
+done          +3 YT         
+done
+door          +1 PT - ZERO  
+door
+dot           +1 YT - ZERO  
+dot
+draw          +1 PT         
+draw
+dress         +1 YT - ZERO  
+dress
+drive         +1 YT - ZERO  
+drive
+dysfunction   +2 PT - ZERO  
+dysfunction
+earlier       +1 PT - ZERO  
+earlier
+earth         +1 PT - ZERO  
+earth
+easy          +2 YT         
+easy
+eat           +3 YT - ZERO  
+eat
+economy       +1 PT - ZERO  
+economy
+eight         +2 PT - ZERO  
+eight
+else          +1 PT         
+else
+empty         +1 PT         
+empty
+end           +2 PT         
+end
+ended         +1 PT - ZERO  
+ended
+entire        +1 PT         
+entire
+equal         +1 YT         
+equal
+equals        +1 YT         
+equals
+event         +1 PT - ZERO  
+event
+everybody     +2 YT         
+everybody
+exactly       +1 YT         
+exactly
+eye           +1 PT - ZERO  
+eye
+f             +1 PT         
+f
+false         +2 YT - ZERO  
+false
+fancy         +1 PT - ZERO  
+fancy
+file          +2 YT - ZERO  
+file
+files         +1 PT - ZERO  
+files
+finally       +1 YT         
+finally
+find          +3 YT         
+find
+finish        +2 YT         
+finish
+fire          +1 PT - ZERO  
+fire
+fly           +1 PT - ZERO  
+fly
+food          +2 YT         
+food
+foot          +1 PT - ZERO  
+foot
+for           +3 PT         
+for
+forward       +1 YT - ZERO  
+forward
+four          +4 PT         
+four
+fpy           +1 YT - ZERO  
+fpy
+fridge        +2 YT         
+fridge
+friend        +1 PT - ZERO  
+friend
+from          +4 PT         
+from
+fruit         +1 PT - ZERO  
+fruit
+function      +6 PT         
+function
+functional    +1 PT - ZERO  
+functional
+functioned    +1 PT - ZERO  
+functioned
+functions     +4 YT         
+functions
+garbage       +1 YT - ZERO  
+garbage
+gave          +1 YT - ZERO  
+gave
+gentleman     +2 YT         
+gentleman
+gentlemen     +1 YT         
+gentlemen
+get           +6 YT         
+get
+gets          +1 YT - ZERO  
+gets
+give          +4 PT         
+give
+globally      +1 PT         
+globally
+globals       +1 YT - ZERO  
+globals
+go            +3 YT         
+go
+gobbledygook  +1 PT - ZERO  
+gobbledygook
+goes          +1 PT         
+goes
+going         +2 PT         
+going
+gone          +1 PT         
+gone
+good          +6 PT         
+good
+got           +2 PT         
+got
+gotten        +1 YT         
+gotten
+grab          +1 YT         
+grab
+great         +1 YT         
+great
+growth        +1 YT - ZERO  
+growth
+guards        +1 PT - ZERO  
+guards
+guess         +1 PT         
+guess
+handle        +1 PT - ZERO  
+handle
+has           +1 PT         
+has
+hasn't        +1 YT - ZERO  
+hasn't
+hate          +1 YT - ZERO  
+hate
+he            +2 PT         
+he
+header        +1 YT - ZERO  
+header
+heads         +1 YT - ZERO  
+heads
+hearing       +1 PT - ZERO  
+hearing
+hell          +1 YT - ZERO  
+hell
+hell's        +1 YT - ZERO  
+hell's
+help          +1 PT - ZERO  
+help
+here          +1 PT         
+here
+here's        +2 YT         
+here's
+hi            +1 PT - ZERO  
+hi
+highlight     +1 YT         
+highlight
+him           +2 PT         
+him
+his           +3 PT - ZERO  
+his
+hit           +1 YT - ZERO  
+hit
+hold          +1 PT - ZERO  
+hold
+hole          +1 PT - ZERO  
+hole
+holy          +1 YT - ZERO  
+holy
+homework      +2 PT         
+homework
+homeworks     +2 YT         
+homeworks
+honestly      +1 YT - ZERO  
+honestly
+hop           +1 YT         
+hop
+house         +1 PT - ZERO  
+house
+how           +2 YT         
+how
+however       +1 PT - ZERO  
+however
+i             +2 PT         
+i
+i'm           +11 YT        
+i'm
+i've          +1 PT         
+i've
+id            +1 YT - ZERO  
+id
+idea          +1 PT         
+idea
+if            +3 YT         
+if
+in            +10 YT        
+in
+inaudible     +1 PT - ZERO  
+inaudible
+indentation   +1 YT - ZERO  
+indentation
+index         +3 PT - ZERO  
+index
+information   +1 PT         
+information
+inner         +1 PT - ZERO  
+inner
+inputs        +1 YT         
+inputs
+inside        +1 YT         
+inside
+interesting   +2 YT         
+interesting
+interworks    +1 YT - ZERO  
+interworks
+is            +10 PT        
+is
+issue         +1 YT         
+issue
+it            +21 YT        
+it
+it'll         +4 YT         
+it'll
+it's          +6 YT         
+it's
+java          +1 YT - ZERO  
+java
+job           +1 PT         
+job
+just          +1 YT         
+just
+keep          +1 PT         
+keep
+keith         +1 YT         
+keith
+kind          +1 YT         
+kind
+klara's       +1 PT - ZERO  
+klara's
+know          +1 YT         
+know
+knows         +1 PT         
+knows
+l'espresso    +1 PT - ZERO  
+l'espresso
+language      +1 PT - ZERO  
+language
+languages     +1 YT         
+languages
+last          +1 PT         
+last
+law           +1 PT         
+law
+left          +1 YT         
+left
+less          +1 PT - ZERO  
+less
+let           +6 YT         
+let
+let's         +1 YT         
+let's
+list          +3 YT         
+list
+literally     +1 PT         
+literally
+little        +1 PT         
+little
+local         +4 YT         
+local
+locally       +1 YT         
+locally
+logo          +1 PT - ZERO  
+logo
+logothetis    +1 PT - ZERO  
+logothetis
+long          +1 PT         
+long
+look          +1 YT         
+look
+loops         +1 YT - ZERO  
+loops
+lopoli        +1 YT - ZERO  
+lopoli
+lost          +1 PT - ZERO  
+lost
+lowest        +1 PT         
+lowest
+lupoli        +1 YT - ZERO  
+lupoli
+ma'am         +1 YT - ZERO  
+ma'am
+machine       +1 PT - ZERO  
+machine
+mach�        +1 PT - ZERO  
+mach�
+made          +1 PT         
+made
+main          +25 YT        
+main
+maine         +1 YT         
+maine
+malfunction   +1 PT - ZERO  
+malfunction
+man           +13 PT        
+man
+mansion       +1 PT - ZERO  
+mansion
+many          +3 PT         
+many
+mark          +1 PT - ZERO  
+mark
+marker        +1 YT         
+marker
+matinenga     +1 PT - ZERO  
+matinenga
+matter        +1 PT - ZERO  
+matter
+max           +1 PT         
+max
+maxim         +1 YT - ZERO  
+maxim
+may           +2 PT         
+may
+me            +1 YT         
+me
+mean          +5 PT         
+mean
+meaning       +1 YT         
+meaning
+means         +1 YT         
+means
+media         +1 PT - ZERO  
+media
+mel           +1 PT - ZERO  
+mel
+men           +1 YT         
+men
+mental        +1 YT - ZERO  
+mental
+menu          +1 YT         
+menu
+met           +1 PT - ZERO  
+met
+microscope    +1 YT - ZERO  
+microscope
+min           +1 YT - ZERO  
+min
+minus         +1 PT - ZERO  
+minus
+moment        +1 PT         
+moment
+more          +1 PT         
+more
+most          +3 YT         
+most
+move          +1 PT         
+move
+moving        +4 YT - ZERO  
+moving
+music         +3 YT - ZERO  
+music
+must          +1 PT - ZERO  
+must
+named         +1 PT         
+named
+national      +1 PT - ZERO  
+national
+nbc           +1 PT - ZERO  
+nbc
+need          +2 YT         
+need
+negative      +1 PT - ZERO  
+negative
+never         +1 PT         
+never
+nine          +2 PT - ZERO  
+nine
+no            +1 PT         
+no
+notes         +1 YT         
+notes
+nother        +1 PT - ZERO  
+nother
+nothing       +2 YT         
+nothing
+notice        +3 YT         
+notice
+noticeably    +1 YT - ZERO  
+noticeably
+number        +1 YT         
+number
+numerical     +1 YT - ZERO  
+numerical
+nurses        +1 PT - ZERO  
+nurses
+obscene       +1 YT         
+obscene
+off           +2 YT         
+off
+offer         +1 YT - ZERO  
+offer
+oh            +1 YT         
+oh
+ok            +24 PT - ZERO 
+ok
+okay          +31 YT - ZERO 
+okay
+olufsen       +1 PT - ZERO  
+olufsen
+on            +2 PT         
+on
+once          +1 PT         
+once
+one           +1 PT         
+one
+one's         +1 YT - ZERO  
+one's
+opening       +1 PT - ZERO  
+opening
+options       +1 YT         
+options
+or            +5 PT         
+or
+order         +2 YT         
+order
+originally    +1 YT         
+originally
+our           +1 PT         
+our
+out           +2 YT         
+out
+output        +1 PT - ZERO  
+output
+outputs       +1 YT         
+outputs
+over          +7 YT         
+over
+own           +1 YT         
+own
+panopto       +1 PT - ZERO  
+panopto
+parentheses   +2 PT         
+parentheses
+parenthesis   +2 YT - ZERO  
+parenthesis
+particular    +1 PT         
+particular
+pass          +2 YT         
+pass
+passed        +1 PT - ZERO  
+passed
+paste         +1 PT         
+paste
+pastes        +1 YT - ZERO  
+pastes
+pay           +2 PT - ZERO  
+pay
+peering       +1 YT - ZERO  
+peering
+pieces        +1 YT         
+pieces
+play          +1 PT - ZERO  
+play
+plunket       +1 PT - ZERO  
+plunket
+plus          +1 YT - ZERO  
+plus
+poco          +1 YT - ZERO  
+poco
+polling       +2 PT - ZERO  
+polling
+poly          +1 YT - ZERO  
+poly
+predicate     +1 YT - ZERO  
+predicate
+pretty        +1 YT - ZERO  
+pretty
+prince        +4 PT         
+prince
+princesse     +1 PT - ZERO  
+princesse
+print         +3 YT         
+print
+print's       +1 PT - ZERO  
+print's
+printed       +1 PT - ZERO  
+printed
+prints        +4 YT - ZERO  
+prints
+probably      +2 YT         
+probably
+problems      +1 YT         
+problems
+program       +1 YT         
+program
+programing    +8 PT - ZERO  
+programing
+programming   +8 YT - ZERO  
+programming
+pronounced    +1 PT - ZERO  
+pronounced
+proof         +1 YT - ZERO  
+proof
+prove         +1 PT - ZERO  
+prove
+pulling       +1 PT - ZERO  
+pulling
+put           +2 YT         
+put
+py            +1 YT - ZERO  
+py
+quality       +1 PT - ZERO  
+quality
+question      +1 YT         
+question
+re-look       +1 YT - ZERO  
+re-look
+read          +1 PT         
+read
+really        +2 PT         
+really
+reasonable    +1 PT - ZERO  
+reasonable
+redraw        +1 YT - ZERO  
+redraw
+referred      +1 PT - ZERO  
+referred
+related       +1 YT - ZERO  
+related
+return        +1 PT         
+return
+returning     +1 PT         
+returning
+returns       +1 YT         
+returns
+right         +3 PT         
+right
+running       +1 YT         
+running
+russo         +1 YT - ZERO  
+russo
+sarasohn      +1 PT - ZERO  
+sarasohn
+say           +1 YT         
+say
+says          +3 PT         
+says
+scene         +1 PT - ZERO  
+scene
+school        +3 PT - ZERO  
+school
+scope         +2 YT         
+scope
+scopes        +1 YT - ZERO  
+scopes
+scores        +1 PT - ZERO  
+scores
+sean          +3 YT - ZERO  
+sean
+seat          +2 YT - ZERO  
+seat
+second        +1 YT         
+second
+section       +1 YT - ZERO  
+section
+security      +1 PT - ZERO  
+security
+see           +3 PT         
+see
+seeing        +1 YT - ZERO  
+seeing
+seen          +1 PT         
+seen
+sends         +1 YT - ZERO  
+sends
+seriously     +1 YT         
+seriously
+set           +3 PT         
+set
+setup         +2 YT         
+setup
+seven         +1 YT - ZERO  
+seven
+share         +1 PT - ZERO  
+share
+she           +1 YT         
+she
+she's         +2 YT - ZERO  
+she's
+sheet         +1 YT - ZERO  
+sheet
+shorter       +1 PT - ZERO  
+shorter
+shortfalls    +1 PT - ZERO  
+shortfalls
+should        +2 PT         
+should
+show          +2 YT         
+show
+showery       +1 YT - ZERO  
+showery
+showing       +2 PT         
+showing
+sides         +1 PT - ZERO  
+sides
+sierra        +1 YT - ZERO  
+sierra
+simply        +1 PT - ZERO  
+simply
+sir           +4 YT         
+sir
+six           +2 PT         
+six
+skip          +1 YT         
+skip
+so            +20 YT        
+so
+some          +2 YT         
+some
+something     +1 YT         
+something
+songs         +1 PT - ZERO  
+songs
+sorry         +1 YT         
+sorry
+sort          +1 PT         
+sort
+sorted        +1 YT - ZERO  
+sorted
+squadrons     +1 PT - ZERO  
+squadrons
+star          +1 PT - ZERO  
+star
+step          +1 PT         
+step
+still         +1 YT         
+still
+story         +1 YT - ZERO  
+story
+stuff         +1 PT         
+stuff
+sure          +1 YT         
+sure
+takes         +1 YT - ZERO  
+takes
+talk          +2 YT         
+talk
+teaching      +1 YT - ZERO  
+teaching
+ten           +1 YT         
+ten
+test          +1 YT         
+test
+than          +1 PT         
+than
+thank         +1 YT         
+thank
+thanks        +1 PT - ZERO  
+thanks
+that          +6 YT         
+that
+that'll       +1 YT - ZERO  
+that'll
+that's        +4 PT         
+that's
+the           +3 YT         
+the
+their         +1 PT         
+their
+them          +7 YT         
+them
+then          +11 YT        
+then
+there         +3 YT         
+there
+there's       +4 YT         
+there's
+they          +2 YT         
+they
+they're       +3 YT         
+they're
+thing         +1 YT         
+thing
+think         +3 PT         
+think
+thirty        +2 YT         
+thirty
+this          +4 PT         
+this
+though        +1 YT         
+though
+thought       +1 YT - ZERO  
+thought
+thousand      +1 YT         
+thousand
+three         +5 PT         
+three
+thursday      +1 YT - ZERO  
+thursday
+time          +2 PT         
+time
+to            +28 PT        
+to
+today         +1 PT         
+today
+together      +1 YT - ZERO  
+together
+tone          +1 PT - ZERO  
+tone
+too           +2 YT         
+too
+tool          +1 YT         
+tool
+toolboxes     +1 PT - ZERO  
+toolboxes
+town          +1 YT         
+town
+tried         +2 PT - ZERO  
+tried
+true          +3 YT         
+true
+try           +2 YT         
+try
+two           +1 YT         
+two
+uh            +7 YT - ZERO  
+uh
+um            +6 YT - ZERO  
+um
+umbc          +1 YT - ZERO  
+umbc
+underscore    +4 YT - ZERO  
+underscore
+understand    +1 PT         
+understand
+up            +1 YT         
+up
+us            +2 PT         
+us
+used          +1 YT         
+used
+value         +1 YT         
+value
+values        +2 YT         
+values
+versus        +1 PT - ZERO  
+versus
+very          +1 PT         
+very
+viewers       +1 PT - ZERO  
+viewers
+wait          +2 YT         
+wait
+wake          +1 YT         
+wake
+walk          +1 YT - ZERO  
+walk
+want          +3 PT         
+want
+was           +1 PT         
+was
+way           +3 YT         
+way
+we            +3 PT         
+we
+we'll         +2 YT         
+we'll
+we've         +1 YT         
+we've
+went          +1 YT         
+went
+were          +2 YT         
+were
+what's        +1 YT         
+what's
+whatever      +1 PT         
+whatever
+when          +5 YT         
+when
+whenever      +1 YT         
+whenever
+which         +1 YT         
+which
+who           +3 PT         
+who
+whoever       +1 YT         
+whoever
+whole         +1 PT         
+whole
+why           +2 PT         
+why
+will          +2 PT         
+will
+win           +1 PT - ZERO  
+win
+with          +4 YT         
+with
+within        +1 YT - ZERO  
+within
+word          +1 PT         
+word
+work          +2 YT         
+work
+worked        +1 PT - ZERO  
+worked
+would         +3 YT         
+would
+write         +1 YT - ZERO  
+write
+writing       +1 PT - ZERO  
+writing
+written       +1 YT - ZERO  
+written
+wrong         +1 YT         
+wrong
+x             +6 YT         
+x
+year          +1 PT - ZERO  
+year
+years         +1 PT - ZERO  
+years
+yep           +1 YT         
+yep
+yes           +4 YT         
+yes
+you           +4 PT         
+you
+you've        +2 YT         
+you've
+your          +3 YT         
+your
+zero          +4 PT         
+zero

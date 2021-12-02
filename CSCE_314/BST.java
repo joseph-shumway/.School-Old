@@ -1,3 +1,8 @@
+// code source: https://github.com/mvyas85/Binary-Tree/blob/master/src/BST/BinarySearchTree.java
+// Binary Search Tree
+
+
+
 // Node class
 class BSTNode {
 
@@ -58,6 +63,8 @@ public class BST {
 
         // else, recursively go down tree until an empty and appropriate node is found (left or right depending on > or <)
         } else {
+
+            // compare to choose left or right
             if (data.compareTo(node.getData()) <= 0) {
                 node.left = insert(node.left, data);
             } else {

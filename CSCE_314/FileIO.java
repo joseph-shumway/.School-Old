@@ -20,10 +20,11 @@ public class FileIO {
 
     // Check if text file can be opened
     public boolean openTextFile(String filename) {
-        Scanner infile;
         
+        // create our scanner
         try {
-            infile = new Scanner(new FileReader(filename));
+            Scanner infile = new Scanner(new FileReader(filename));
+            infile.close();
             return true;
             
         } catch (Exception e) {
@@ -33,7 +34,7 @@ public class FileIO {
     }
 
     // read, filter, and tokenize from given file
-    public ArrayList<String> readTextFile(String filename) {
+    public void readTextFile(String filename) {
         Scanner infile;
         String delimiters = "\\t|,|;|\\.|\\?|!|:|@|\\[|\\]|\\(|\\)|\\{|\\}|_|\\*|/";
         ArrayList<String> subList = new ArrayList<String>();
@@ -96,8 +97,6 @@ public class FileIO {
                 System.out.println("File not found");
             }
         }
-
-        return stringList;
     }
 
     public void writeData() {
