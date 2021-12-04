@@ -1,0 +1,1 @@
+new_allocator.h:136:4: error: no matching function for call to ‘std::pair<const int, Vertex<int> >::pair(std::pair<std::__cxx11::basic_string<char>, Vertex<int> >)’

@@ -5,17 +5,11 @@
             "label": "C/C++: g++ build active file",
             "command": "/usr/bin/g++",
             "args": [
-                //"-Wextra",
-                //"-Wall",
-                //"-pedantic",
-                //"-Werror",
                 "-g",
                 "-std=c++17",
-                //"-fsanitize=address",
-                "${fileDirname}/cpu-job-main.cpp",
+                "${fileDirname}/*.cpp",
                 "-o",
                 "${fileDirname}/${fileBasenameNoExtension}"
-                
             ],
             "options": {
                 "cwd": "${workspaceFolder}"
