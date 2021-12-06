@@ -1,0 +1,24 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Launch Java Program",
+            "request": "launch",
+            "mainClass": "cachesimulator",
+            "args": "input.txt",
+            "projectName": "project_63bb55f8",
+            "presentation": {
+                "hidden": false,
+                "group": "",
+                "order": 1,
+                "clear": true,
+                "panel": "shared"
+            }
+        }
+    ]
+
+
+
+
+}

@@ -36,15 +36,18 @@ struct Vertex {
 // syntax for custom compare functor follows
 // Refer the instructions PDF last section for more information
 
-// template<class T>
-// class VertexCompare
-// {
-// public:
-//   bool operator()(Vertex<T> v1, Vertex<T> v2){
-//     //todo - implement here
-//     return false;
-//   }
-// };
+template<class T>
+class VertexCompare
+{
+public:
+  bool operator()(Vertex<T> v1, Vertex<T> v2) {
+    if (v1.label.top_num > v2.label.top_num) {
+      return true;
+    }
+    //cout << "[" << v1 << "] " << v1 << " > " << v2 << endl;
+    return false;
+  }
+};
 
 template <class T>
 class Graph {
@@ -91,7 +94,7 @@ public:
         }
 
         // add our vertex to the unordered_map
-        node_set.emplace(make_pair(current_num, *temp_Vertex));
+        node_set.insert(make_pair(current_num, *temp_Vertex));
       } 
     }
 
@@ -115,12 +118,7 @@ public:
 
   //return the vertex at label, else throw any exception  - refer the instructions PDF for more information.
   Vertex<T> at(T label){
-    if (node_set.find(label) == node_set.end()) {
-      throw std::invalid_argument("Invalid label");
-    } else {
-      return node_set.find(label)->second;
-    }
-    
+    return node_set.at(label);
   }
 
   //return the graph size (number of verticies)
@@ -131,7 +129,45 @@ public:
   // topological sort
   // return true if successful, false on failure (cycle)
   bool topological_sort(void){
-    return false;
+    queue<Vertex<T> > vertexQueue;
+    int counter = 0;
+
+    for (auto &eachVertexPair : node_set) {
+        if (eachVertexPair.second.indegree == 0) {
+          vertexQueue.push(eachVertexPair.second);
+        }
+    }
+
+    // cout << "Computing top Nums: " << endl;
+
+    while (!vertexQueue.empty())
+    {
+      Vertex<T> v = vertexQueue.front();
+      vertexQueue.pop();
+
+      v.top_num = counter;
+      node_set.at(v.label).top_num = counter;
+      // cout << "[" << v.label << ":" << v.top_num << "] ";
+      counter++;
+
+      for (auto adj_v : v.adj_list) {
+        node_set.at(adj_v).indegree--;
+        if (node_set.at(adj_v).indegree == 0) {
+          vertexQueue.push(node_set.at(adj_v));
+        }
+      }
+    }
+
+    if (counter != node_set.size()) {
+      return false;
+    }
+    
+
+    
+    
+    
+    
+    return true;
   } // Part 2
 
   // find indegree
@@ -150,31 +186,32 @@ public:
     }
 
     for (auto &each_pair : node_set) {
-      cout << each_pair.second.label << ":   " << each_pair.second.indegree << endl;
+      //cout << each_pair.second.label << ":   " << each_pair.second.indegree << endl;
     }
   } // Part 2
 
   // print topological sort into o
   //  if addNewline is true insert newline into stream
   void print_top_sort(ostream& o, bool addNewline=true) { 
-    queue<std::pair<T, Vertex<T> > > q;
-    int counter = 0;
     
+    int counter = 0;
+    std::priority_queue<Vertex<T>, std::vector<Vertex<T> >, VertexCompare<Vertex<T> > > vertexQueue;
+    
+    //cout << "\nPrinting top Nums before adding to queue: " << endl;
+    for (auto pair : node_set) {
+        vertexQueue.push(pair.second);
+        //cout << "[" << pair.second.label << ":" << pair.second.top_num << "] ";
+    }
 
-    // q.extend([v in graph if v.indegree == 0])
+    //cout << "\n\nPrinting top Nums after adding to queue: " << endl;
 
-    // while not q.isEmpty():
-    //     v = q.pop()
-    //     v.top_num = counter
-    //     counter += 1
-
-    //     for adj_v in v.adj_list:
-    //         adj_v.indegree -= 1
-    //         if adj_v.indegree == 0:
-    //             q.push(adj_v)
-
-    // if counter != graph.size():
-    //     raise CycleDetectedException()
+    while (!vertexQueue.empty())
+    {
+      o << vertexQueue.top().label << " ";
+      //cout << "[" << vertexQueue.top().label << ":" << vertexQueue.top().top_num << "] ";
+      vertexQueue.pop();
+    }
+    //cout << endl;
     
     if(addNewline){o << '\n';};
   }; // Part 2
