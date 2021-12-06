@@ -7,7 +7,6 @@
             "request": "launch",
             "mainClass": "cachesimulator",
             "args": "input.txt",
-            "projectName": "project_63bb55f8",
             "presentation": {
                 "hidden": false,
                 "group": "",

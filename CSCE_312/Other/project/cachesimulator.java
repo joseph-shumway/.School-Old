@@ -6,8 +6,8 @@ import java.io.FileReader;
 public class cachesimulator {
 
     // declare our main public variables
-    public static ArrayList<ArrayList<String> > ram = new ArrayList<ArrayList<String>>(256);
-    public static ArrayList<String> cache = new ArrayList<String>(0);
+    public static ArrayList<String> ram = new ArrayList<String>(256);
+    public static ArrayList<ArrayList<String> > cache = new ArrayList<ArrayList<String>>(0);
     public static int cacheSize;
     public static int blockSize;
     public static int associativity;
@@ -109,6 +109,8 @@ public class cachesimulator {
 
         // block = each list<String> in cache list: "0 0 00 00 00 00 00 00 00 00 00"
         // value = each String in list<String> in list: "0"
+
+        
         
 
     }
