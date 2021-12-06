@@ -7,14 +7,35 @@ public class cachesimulator {
 
     // declare our main public variables
     public static ArrayList<String> ram = new ArrayList<String>(256);
-    public static ArrayList<ArrayList<String> > cache = new ArrayList<ArrayList<String>>(0);
+    public static ArrayList<ArrayList<String>> cache;
+    
+    // C
     public static int cacheSize;
+
+    // B and b
     public static int blockSize;
+    public static int numOffsetBits;
+
+    // E
     public static int associativity;
+
+    // S and s
+    public static int numSets;
+    public static int numSetBits;
+
+    // m
+    public static int physicalAddressBits = 8;
+
+    // t
+    public static int numTagBits;
+
     public static int replacementPolicy;
     public static int hitPolicy;
     public static int missPolicy;
     public static boolean quit = false;
+    
+    
+
 
 
     public static void main(String[] args) {
@@ -39,13 +60,6 @@ public class cachesimulator {
             
 
         }
-        
-
-
-
-        
-        
-        
     }
 
 
@@ -100,19 +114,23 @@ public class cachesimulator {
         hitPolicy = s.nextInt(); 
         pront("write miss policy: ");
         missPolicy = s.nextInt(); 
-        print("cache successfully configured!");
 
-        // fill cache array with 00 using size
-        for (int i = 0; i < cacheSize; i++) {
-            cache.add(new ArrayList<String>());
-        }
+        // fill cache with 0s
+        cacheFlush();
+
+        numSets = (cacheSize / blockSize) / associativity;
+        numSetBits = log2(numSets);
+        numOffsetBits = log2(blockSize);
+        numTagBits = physicalAddressBits - (numSetBits + numOffsetBits);
+        // print("Tag bits: " + numTagBits);
+        // print("m: " + physicalAddressBits);
+        // print("s: " + numSetBits);
+        // print("b: " + numOffsetBits);
+
+        print("cache successfully configured!");
 
         // block = each list<String> in cache list: "0 0 00 00 00 00 00 00 00 00 00"
         // value = each String in list<String> in list: "0"
-
-        
-        
-
     }
 
     // view menu function
@@ -129,6 +147,12 @@ public class cachesimulator {
         print("7. memory-dump");
         print("8. quit");
         print("****************************");
+
+        // clear buffer if not empty
+        if (s.hasNextLine()) {
+            s.nextLine();
+        }
+        
         return s.nextLine();
     }
 
@@ -167,13 +191,26 @@ public class cachesimulator {
                 quit = true; break;
             
             default: 
-                print("Invalid input, try again!");break;
+                print("Invalid input [" + command + "], try again!"); break;
         }
     }
 
     // cache-read function
     public static void cacheRead(String[] arguments) {
-        print(arguments[0]);
+        
+        // get binary representation of hex input
+        StringBuilder binAddr = new StringBuilder(Integer.toBinaryString(Integer.parseInt(arguments[0].substring(2), 16))); 
+        
+        // add leading zeroes
+        for (int i = binAddr.length(); i < 8; i++) {
+            binAddr.insert(0, "0");
+        }
+        
+        print(binAddr.toString());
+        int set = Integer.parseInt(binAddr.substring(numTagBits, numTagBits + numSetBits));
+        String tag = binAddr.substring(0, numTagBits);
+        print("set:" + set);
+        print("tag:" + tag);
     }
 
     // cache-write function
@@ -183,7 +220,23 @@ public class cachesimulator {
 
     // cache-read function
     public static void cacheFlush() {
-        
+        cache = new ArrayList<ArrayList<String>>(0);
+        // fill cache array with 00 using size
+        for (int i = 0; i < cacheSize; i++) {
+            ArrayList<String> tempString = new ArrayList<String>(0);
+            tempString.add("0");
+            tempString.add("0");
+            tempString.add("00");
+            tempString.add("00");
+            tempString.add("00");
+            tempString.add("00");
+            tempString.add("00");
+            tempString.add("00");
+            tempString.add("00");
+            tempString.add("00");
+            tempString.add("00");
+            cache.add(tempString);
+        }
     }
 
     // cache-read function
@@ -213,7 +266,10 @@ public class cachesimulator {
 
 
 
-
+    // log2 helper function
+    public static int log2(int x) {  
+        return (int)(Math.log(x) / Math.log(2));
+    }
 
     // helper print functions
     public static void print(String input) {
