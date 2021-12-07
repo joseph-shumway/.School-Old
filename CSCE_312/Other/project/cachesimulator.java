@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -6,7 +7,7 @@ import java.io.FileReader;
 public class cachesimulator {
 
     // declare our main public variables
-    public static ArrayList<String> ram = new ArrayList<String>(256);
+    public static ArrayList<String> ram;
     public static ArrayList<ArrayList<String>> cache;
     
     // C
@@ -44,7 +45,7 @@ public class cachesimulator {
         // welcome and init RAM -------------------------------------
         //
         print("*** Welcome to the cache simulator ***");
-        initRAM(filename);
+        initRAM(filename, s);
 
         // init cache -----------------------------------------------
         //
@@ -57,8 +58,6 @@ public class cachesimulator {
             // loop through our menu and selection functions
             String choice = viewMenu(s);
             doSelection(choice);
-            
-
         }
     }
 
@@ -66,9 +65,30 @@ public class cachesimulator {
     // helper functions to make our main function cleaner
     
     // initialize our ram array
-    public static void initRAM(String filename) {
-        print("initialize the RAM:");
-        print("init-ram 0x00 0xFF");
+    public static void initRAM(String filename, Scanner s) {
+        
+        // print("init-ram 0x00 0xFF");
+        String[] inLine;
+        boolean getRamInit = false;
+        String beginning = "";
+        String end = "";
+
+
+        // initialize RAM
+        while (!getRamInit) {
+            print("initialize the RAM:");
+            inLine = s.nextLine().split(" ");
+            if (inLine[0].equals("init-ram") && inLine.length == 3) {
+                beginning = inLine[1];
+                end = inLine[2];
+                break;
+            } else {
+                print("Invalid Input!");
+            }
+        }
+        
+        // create ram array based on beginning and end values
+        ram = new ArrayList<String>(Integer.parseInt(end.substring(2), 16) - Integer.parseInt(beginning.substring(2), 16));
         
         
         Scanner infile;
@@ -114,6 +134,7 @@ public class cachesimulator {
         hitPolicy = s.nextInt(); 
         pront("write miss policy: ");
         missPolicy = s.nextInt(); 
+        s.nextLine();
 
         // fill cache with 0s
         cacheFlush();
@@ -149,11 +170,15 @@ public class cachesimulator {
         print("****************************");
 
         // clear buffer if not empty
+        // if (s.hasNextLine()) {
+        //     s.nextLine();
+        // }
+
         if (s.hasNextLine()) {
-            s.nextLine();
+            return s.nextLine();
+        } else {
+            return "";
         }
-        
-        return s.nextLine();
     }
 
     // choose from menu
@@ -206,11 +231,50 @@ public class cachesimulator {
             binAddr.insert(0, "0");
         }
         
+        // get set and tag
         print(binAddr.toString());
         int set = Integer.parseInt(binAddr.substring(numTagBits, numTagBits + numSetBits));
         String tag = binAddr.substring(0, numTagBits);
+
+
+        // check if our value exists in our cache
+        boolean hit = false;
+        ArrayList<String> setList = cache.get(set);
+        String tagFromList = String.format("%02X", Integer.parseInt(setList.get(2), 2));
+        String tagFromInput = String.format("%02X", Integer.parseInt(tag, 2));
+        if (tagFromList.equals(tagFromInput)) {
+            hit = true;
+        }
+
+        // print out our values
         print("set:" + set);
         print("tag:" + tag);
+        print("tagFromList:" + tagFromList);
+        print("tagFromInput:" + tagFromInput);
+
+        // eviction branches
+        if (hit) {
+            print("hit:yes");
+            print("eviction_line:-1");
+
+        } else {
+            print("hit:no");
+
+            // random replacement
+            if (replacementPolicy == 1) {
+                Random r = new Random();
+                int position = r.nextInt(6) + 5;
+
+
+            // Least Recently Used replacement
+            } else if (replacementPolicy == 2) {
+
+            }
+        }
+        
+        print(setList.toString());
+
+
     }
 
     // cache-write function
