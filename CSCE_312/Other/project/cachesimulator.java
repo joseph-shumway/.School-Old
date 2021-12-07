@@ -67,7 +67,6 @@ public class cachesimulator {
     // initialize our ram array
     public static void initRAM(String filename, Scanner s) {
         
-        // print("init-ram 0x00 0xFF");
         String[] inLine;
         boolean getRamInit = false;
         String beginning = "";
@@ -81,7 +80,11 @@ public class cachesimulator {
             if (inLine[0].equals("init-ram") && inLine.length == 3) {
                 beginning = inLine[1];
                 end = inLine[2];
-                break;
+                getRamInit = true;
+            } else if (inLine[0].equals("asdf")){
+                beginning = "0x00";
+                end = "0xFF";
+                getRamInit = true;
             } else {
                 print("Invalid Input!");
             }
@@ -143,10 +146,6 @@ public class cachesimulator {
         numSetBits = log2(numSets);
         numOffsetBits = log2(blockSize);
         numTagBits = physicalAddressBits - (numSetBits + numOffsetBits);
-        // print("Tag bits: " + numTagBits);
-        // print("m: " + physicalAddressBits);
-        // print("s: " + numSetBits);
-        // print("b: " + numOffsetBits);
 
         print("cache successfully configured!");
 
@@ -168,11 +167,6 @@ public class cachesimulator {
         print("7. memory-dump");
         print("8. quit");
         print("****************************");
-
-        // clear buffer if not empty
-        // if (s.hasNextLine()) {
-        //     s.nextLine();
-        // }
 
         if (s.hasNextLine()) {
             return s.nextLine();
@@ -239,10 +233,12 @@ public class cachesimulator {
 
         // check if our value exists in our cache
         boolean hit = false;
-        ArrayList<String> setList = cache.get(set);
+        ArrayList<String> setList = cache.get(set * associativity);
         String tagFromList = String.format("%02X", Integer.parseInt(setList.get(2), 2));
         String tagFromInput = String.format("%02X", Integer.parseInt(tag, 2));
-        if (tagFromList.equals(tagFromInput)) {
+
+        
+        if (setList.get(0).equals("1") && tagFromList.equals(tagFromInput)) {
             hit = true;
         }
 
@@ -263,7 +259,41 @@ public class cachesimulator {
             // random replacement
             if (replacementPolicy == 1) {
                 Random r = new Random();
-                int position = r.nextInt(6) + 5;
+                int position = r.nextInt(associativity);
+                print("eviction_line:" + position);
+
+                // build our address for the beginning of our RAM block
+                StringBuilder blockAddress = new StringBuilder(binAddr.substring(0, numTagBits + numSetBits));
+                for (int i = 0; i < numOffsetBits; i++) {
+                    blockAddress.append("0");
+                }
+                print("Block Address:" + blockAddress.toString());
+
+                // convert address from binary to hex
+                String blockAddressHex = String.format("%02X", Integer.parseInt(blockAddress.toString(), 2));
+                print("Block Address:" + blockAddressHex);
+
+                // convert address to decimal
+                int blockAddressDec = Integer.parseInt(blockAddressHex, 16);
+                print("Block Address:" + blockAddressDec);
+
+
+                // add our block from ram into block array as well as valid and dirty bits
+                ArrayList<String> blockFromRam = new ArrayList<String>(blockSize);
+                blockFromRam.add("1");
+                blockFromRam.add("0");
+
+                // grab all pieces in block
+                for (int i = 0; i < blockSize; i++) {
+                    blockFromRam.add(ram.get(blockAddressDec + i));
+                }
+
+                print("RAM BLOCK: " + blockFromRam.toString());
+
+                cache.set((set * associativity) + position, blockFromRam);
+                
+
+
 
 
             // Least Recently Used replacement
@@ -272,7 +302,7 @@ public class cachesimulator {
             }
         }
         
-        print(setList.toString());
+        print("Current Set: " + setList.toString());
 
 
     }
