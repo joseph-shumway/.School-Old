@@ -29,11 +29,17 @@ public class cachesimulator {
 
     // t
     public static int numTagBits;
+    public static int numTagDigits = 1;
 
     public static int replacementPolicy;
     public static int hitPolicy;
     public static int missPolicy;
     public static boolean quit = false;
+
+    public static int numCacheHits = 0;
+    public static int numCacheMisses = 0;
+
+    public static ArrayList<Integer> numSetReplacements;
     
     
 
@@ -143,11 +149,19 @@ public class cachesimulator {
         numSetBits = log2(numSets);
         numOffsetBits = log2(blockSize);
         numTagBits = physicalAddressBits - (numSetBits + numOffsetBits);
+        if (numTagBits > 4) {
+            numTagDigits = 2;
+        }
 
         // fill cache with 0s
         cacheFlush();
 
-        
+        numSetReplacements = new ArrayList<Integer>(0);
+
+        for (int index = 0; index < numSets; index++) {
+            Integer x = Integer.valueOf(0);
+            numSetReplacements.add(x);
+        }
 
         print("cache successfully configured!");
 
@@ -218,7 +232,7 @@ public class cachesimulator {
 
     // cache-read function
     public static void cacheRead(String[] arguments) {
-        int position = 0;
+        int evictLineIndex = 0;
 
         // get binary representation of hex input
         StringBuilder binAddr = new StringBuilder(Integer.toBinaryString(Integer.parseInt(arguments[0].substring(2), 16))); 
@@ -229,60 +243,205 @@ public class cachesimulator {
         }
         
         // get set and tag
-        print(binAddr.toString());
-        int set = Integer.parseInt(binAddr.substring(numTagBits, numTagBits + numSetBits));
+        //print(binAddr.toString());
+        int setIndex = Integer.parseInt(binAddr.substring(numTagBits, numTagBits + numSetBits));
         String tag = binAddr.substring(0, numTagBits);
+        String offset = binAddr.substring(numTagBits + numSetBits);
 
         String tagFromList = "";
-        String tagFromInput = String.format("%02X", Integer.parseInt(tag, 2));
+        String tagFromInput = "";
+        if (numTagDigits == 1) {
+            tagFromInput = String.format("%01X", Integer.parseInt(tag, 2));
+        } else {
+            tagFromInput = String.format("%02X", Integer.parseInt(tag, 2));
+        }
 
-        // check if our value exists in our cache
+        // check if our input value exists in our cache
         boolean hit = false;
-        ArrayList<ArrayList<String>> setList = cache.get(set);
-        int setOffset = 0;
-        for (setOffset = 0; setOffset < setList.size(); setOffset++) {
-            tagFromList = setList.get(setOffset).get(2);
-            
-            if (setList.get(setOffset).get(0).equals("1") && tagFromList.equals(tagFromInput)) {
+        ArrayList<ArrayList<String>> setList = cache.get(setIndex);
+        int currentLineNum = 0;
+        for (currentLineNum = 0; currentLineNum < setList.size(); currentLineNum++) {
+            tagFromList = setList.get(currentLineNum).get(2);
+            //print("tagFromList:" + tagFromList);
+            if (setList.get(currentLineNum).get(0).equals("1") && tagFromList.equals(tagFromInput)) {
                 hit = true;
                 break;
             }
         }
 
         // print out our values
-        print("set:" + set);
+        print("set:" + setIndex);
         print("tag:" + tag);
-        print("tagFromList:" + tagFromList);
-        print("tagFromInput:" + tagFromInput);
+        //print("tagFromInput:" + tagFromInput);
 
         // eviction branches
         if (hit) {
+            numCacheHits++;
             print("hit:yes");
             print("eviction_line:-1");
+            print("ram_address:-1");
+            print("data:0x" + setList.get(currentLineNum).get(Integer.parseInt(offset, 2) + 3));
 
         } else {
+            numCacheMisses++;
             print("hit:no");
 
+            boolean emptyLine = false;
+
+            // print("\nCurrent Set Before: ");
+            // for (ArrayList<String> set : cache.get(setIndex)) {
+            //     print(set.toString());
+            // }
+
+            // find an empty slot if it exists before going into replacement policy
+            for (int lineNumber = 0; lineNumber < associativity; lineNumber++) {
+
+                
+
+                // if empty line:
+                if (cache.get(setIndex).get(lineNumber).get(5).equals("00") && cache.get(setIndex).get(lineNumber).get(4).equals("00")) {
+
+                    evictLineIndex = lineNumber;
+                    print("eviction_line:" + evictLineIndex);
+
+                    // build our address for the beginning of our RAM block
+                    StringBuilder blockAddress = new StringBuilder(binAddr.substring(0, numTagBits + numSetBits));
+                    for (int i = 0; i < numOffsetBits; i++) {
+                        blockAddress.append("0");
+                    }
+                    //print("Block Address(bin):" + blockAddress.toString());
+
+                    // convert address from binary to hex
+                    String blockAddressHex = String.format("%02X", Integer.parseInt(blockAddress.toString(), 2));
+                    print("ram_address:0x" + blockAddressHex);
+
+                    // convert address to decimal
+                    int blockAddressDec = Integer.parseInt(blockAddressHex, 16);
+                    //print("Block Address(dec):" + blockAddressDec);
+
+
+                    // add our block from ram into block array as well as valid and dirty bits
+                    ArrayList<String> blockFromRam = new ArrayList<String>(blockSize);
+                    blockFromRam.add("1");
+                    blockFromRam.add("0");
+                    
+                    // add our tag (check for number of tag digits first)
+                    // if (numTagDigits == 1) {
+                    //     blockFromRam.add(tagFromInput.substring(1));
+                    // } else {
+                    //     blockFromRam.add(tagFromInput);
+                    // }
+
+                    blockFromRam.add(tagFromInput);
+                    
+
+
+                    // grab all pieces in block
+                    for (int i = 0; i < blockSize; i++) {
+                        blockFromRam.add(ram.get(blockAddressDec + i));
+                    }
+
+                    String data = blockFromRam.get(Integer.parseInt(offset, 2) + 3);
+                    print("data:0x" + data);
+
+                    // create a new set with the updated data from blockFromRam, then put it in place of the old set in our cache
+                    //print("\nRAM BLOCK: \n" + blockFromRam.toString());
+                    ArrayList<ArrayList<String>> tempSet = cache.get(setIndex);
+                    tempSet.set(evictLineIndex, blockFromRam);
+                    cache.set(setIndex, tempSet);
+
+                    emptyLine = true;
+                    //print(emptyLine);
+                    break;
+                } else {
+                    emptyLine = false;
+                }
+            }
+            
             // random replacement
-            if (replacementPolicy == 1) {
+            if (replacementPolicy == 1 && !emptyLine) {
+                // print("Doing random replacement");
                 Random r = new Random();
-                position = r.nextInt(associativity);
-                print("eviction_line:" + position);
+                evictLineIndex = r.nextInt(associativity);
+                print("eviction_line:" + evictLineIndex);
 
                 // build our address for the beginning of our RAM block
                 StringBuilder blockAddress = new StringBuilder(binAddr.substring(0, numTagBits + numSetBits));
                 for (int i = 0; i < numOffsetBits; i++) {
                     blockAddress.append("0");
                 }
-                print("Block Address:" + blockAddress.toString());
+                //print("Block Address(bin):" + blockAddress.toString());
 
                 // convert address from binary to hex
                 String blockAddressHex = String.format("%02X", Integer.parseInt(blockAddress.toString(), 2));
-                print("Block Address:" + blockAddressHex);
+                print("ram_address:0x" + blockAddressHex);
 
                 // convert address to decimal
                 int blockAddressDec = Integer.parseInt(blockAddressHex, 16);
-                print("Block Address:" + blockAddressDec);
+                //print("Block Address(dec):" + blockAddressDec);
+
+
+                // add our block from ram into block array as well as valid and dirty bits
+                ArrayList<String> blockFromRam = new ArrayList<String>(blockSize);
+                blockFromRam.add("1");
+                blockFromRam.add("0");
+                
+                // add our tag (check for number of tag digits first)
+                // if (numTagDigits == 1) {
+                //     blockFromRam.add(tagFromInput.substring(1));
+                // } else {
+                //     blockFromRam.add(tagFromInput);
+                // }
+
+                blockFromRam.add(tagFromInput);
+                
+
+
+                // grab all pieces in block
+                for (int i = 0; i < blockSize; i++) {
+                    blockFromRam.add(ram.get(blockAddressDec + i));
+                }
+
+                String data = blockFromRam.get(Integer.parseInt(offset, 2) + 3);
+                print("data:0x" + data);
+
+                // create a new set with the updated data from blockFromRam, then put it in place of the old set in our cache
+                // print("\nRAM BLOCK: \n" + blockFromRam.toString());
+                ArrayList<ArrayList<String>> tempSet = cache.get(setIndex);
+                tempSet.set(evictLineIndex, blockFromRam);
+                cache.set(setIndex, tempSet);
+                
+
+
+
+
+            // Least Recently Used replacement
+            } else if (replacementPolicy == 2 && !emptyLine) {
+
+                int minimum = 999;
+                for (int setNumber = 0; setNumber < numSets; setNumber++) {
+                    if (numSetReplacements.get(setNumber) < minimum) {
+                        minimum = numSetReplacements.get(setNumber);
+                    }
+                }
+
+                evictLineIndex = minimum;
+                print("eviction_line:" + evictLineIndex);
+
+                // build our address for the beginning of our RAM block
+                StringBuilder blockAddress = new StringBuilder(binAddr.substring(0, numTagBits + numSetBits));
+                for (int i = 0; i < numOffsetBits; i++) {
+                    blockAddress.append("0");
+                }
+                //print("Block Address(bin):" + blockAddress.toString());
+
+                // convert address from binary to hex
+                String blockAddressHex = String.format("%02X", Integer.parseInt(blockAddress.toString(), 2));
+                print("ram_address:0x" + blockAddressHex);
+
+                // convert address to decimal
+                int blockAddressDec = Integer.parseInt(blockAddressHex, 16);
+                //print("Block Address(dec):" + blockAddressDec);
 
 
                 // add our block from ram into block array as well as valid and dirty bits
@@ -290,26 +449,30 @@ public class cachesimulator {
                 blockFromRam.add("1");
                 blockFromRam.add("0");
 
+                blockFromRam.add(tagFromInput);
+
                 // grab all pieces in block
                 for (int i = 0; i < blockSize; i++) {
                     blockFromRam.add(ram.get(blockAddressDec + i));
                 }
 
-                print("RAM BLOCK: " + blockFromRam.toString());
+                String data = blockFromRam.get(Integer.parseInt(offset, 2) + 3);
+                print("data:0x" + data);
 
-                cache.get(set).set(position, blockFromRam);
-                
+                // create a new set with the updated data from blockFromRam, then put it in place of the old set in our cache
+                print("\nRAM BLOCK: \n" + blockFromRam.toString());
+                ArrayList<ArrayList<String>> tempSet = cache.get(setIndex);
+                tempSet.set(evictLineIndex, blockFromRam);
+                cache.set(setIndex, tempSet);
 
-
-
-
-            // Least Recently Used replacement
-            } else if (replacementPolicy == 2) {
-
+                print("\nCurrent Set After: ");
+                for (ArrayList<String> set : cache.get(setIndex)) {
+                    print(set.toString());
+                }
             }
         }
         
-        print("Current Set: " + cache.get((set * associativity) + position).toString());
+        
 
     }
 
@@ -322,7 +485,7 @@ public class cachesimulator {
     public static void cacheFlush() {
         cache = new ArrayList<ArrayList<ArrayList<String>>> (0);
 
-        print("");
+        // print("");
         // fill cache array with 00 using size
         for (int currentSet = 0; currentSet < ((cacheSize / blockSize) / associativity); currentSet++) {
             //print("currentSetIndex:" + currentSet);
@@ -336,8 +499,18 @@ public class cachesimulator {
 
                 // add our empty block bits including Valid and Dirty bits
                 ArrayList<String> tempBlock = new ArrayList<String>(0);
+                tempBlock.add("1");
                 tempBlock.add("0");
-                tempBlock.add("0");
+
+                StringBuilder tagDigits = new StringBuilder();
+
+                // add our tag digits
+                for (int currentDigit = 0; currentDigit < numTagDigits; currentDigit++) {
+                    tagDigits.append("0");
+                }
+                tempBlock.add(tagDigits.toString());
+
+                // add empty block data
                 for (int currentBlock = 0; currentBlock < blockSize; currentBlock++) {
                     tempBlock.add("00");
                 }
@@ -349,23 +522,51 @@ public class cachesimulator {
         }
 
         // debug: print our empty cache
-        int setCounter = 0;
-        int lineCounter = 0;
-        for (ArrayList<ArrayList<String>> set : cache) {
-            print("-------------- [[set  " + setCounter++ + "]] --------------\n");
-            for (ArrayList<String> line : set) {
-                print("--------------- [line " + lineCounter++ + "] ---------------");
-                print(line.toString() + "\n");
+        // int setCounter = 0;
+        // int lineCounter = 0;
+        // for (ArrayList<ArrayList<String>> set : cache) {
+        //     print("-------------- [[set  " + setCounter++ + "]] --------------\n");
+        //     for (ArrayList<String> line : set) {
+        //         print("--------------- [line " + lineCounter++ + "] ---------------");
+        //         print(line.toString() + "\n");
                 
-            }
-            lineCounter = 0;
-            print("\n");
-        }
+        //     }
+        //     lineCounter = 0;
+        //     print("\n");
+        // }
     }
 
     // cache-read function
     public static void cacheView() {
         
+        print("cache_size:" + cacheSize);
+        print("data_block_size:" + blockSize);
+        print("associativity:" + associativity);
+        print("replacement_policy:" + replacementPolicy);
+        print("write_hit_policy:" + hitPolicy);
+        print("write_miss_policy:" + missPolicy);
+        print("number_of_cache_hits:" + numCacheHits);
+        print("number_of_cache_misses:" + numCacheMisses);
+        
+        
+        // debug: print our empty cache
+        int setCounter = 0;
+        int lineCounter = 0;
+        print("cache_content:");
+        for (ArrayList<ArrayList<String>> set : cache) {
+            //print("-------------- [[set  " + setCounter++ + "]] --------------\n");
+            for (ArrayList<String> line : set) {
+                //print("--------------- [line " + lineCounter++ + "] ---------------");
+                for (String byteString : line) {
+                    pront(byteString + " ");
+                }
+                print("");
+                
+                
+            }
+            lineCounter = 0;
+            //print("\n");
+        }
     }
 
     // cache-read function
@@ -399,6 +600,11 @@ public class cachesimulator {
     public static void print(String input) {
         System.out.println(input);
     }
+
+    public static void print(boolean input) {
+        System.out.println(input);
+    }
+
     public static void pront(String input) {
         System.out.print(input);
     }
