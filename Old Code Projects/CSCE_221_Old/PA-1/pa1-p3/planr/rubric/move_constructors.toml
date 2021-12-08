@@ -1,7 +1,0 @@
-title="Move constructors"
-
-points=5.0
-
-[adapters.gtest]
-name="MOVE_CONSTRUCTORS"
-testfile="move_constructors.cpp"

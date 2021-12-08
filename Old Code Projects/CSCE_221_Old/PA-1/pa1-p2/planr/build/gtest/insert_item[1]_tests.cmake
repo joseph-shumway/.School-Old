@@ -1,7 +1,0 @@
-add_test( COLLECTION.INSERT_ITEM0 /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/insert_item [==[--gtest_filter=COLLECTION.INSERT_ITEM0]==] --gtest_also_run_disabled_tests)
-set_tests_properties( COLLECTION.INSERT_ITEM0 PROPERTIES WORKING_DIRECTORY /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest)
-add_test( COLLECTION.INSERT_ITEM1 /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/insert_item [==[--gtest_filter=COLLECTION.INSERT_ITEM1]==] --gtest_also_run_disabled_tests)
-set_tests_properties( COLLECTION.INSERT_ITEM1 PROPERTIES WORKING_DIRECTORY /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest)
-add_test( COLLECTION.INSERT_ITEM2 /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/insert_item [==[--gtest_filter=COLLECTION.INSERT_ITEM2]==] --gtest_also_run_disabled_tests)
-set_tests_properties( COLLECTION.INSERT_ITEM2 PROPERTIES WORKING_DIRECTORY /mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest)
-set( insert_item_TESTS COLLECTION.INSERT_ITEM0 COLLECTION.INSERT_ITEM1 COLLECTION.INSERT_ITEM2)

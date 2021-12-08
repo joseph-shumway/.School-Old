@@ -1,5 +1,0 @@
-if(EXISTS "/mnt/c/.School/CSCE_221/PA-1/pa1-p3/planr/build/gtest/move_constructors[1]_tests.cmake")
-  include("/mnt/c/.School/CSCE_221/PA-1/pa1-p3/planr/build/gtest/move_constructors[1]_tests.cmake")
-else()
-  add_test(move_constructors_NOT_BUILT move_constructors_NOT_BUILT)
-endif()

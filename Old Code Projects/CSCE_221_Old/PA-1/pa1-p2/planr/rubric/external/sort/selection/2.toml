@@ -1,5 +1,0 @@
-title="selection sort 2"
-
-[adapters.gtest]
-name="SORT_SELECTION2"
-testfile="sort_selection.cpp"

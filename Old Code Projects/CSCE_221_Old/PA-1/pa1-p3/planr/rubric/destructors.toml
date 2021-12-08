@@ -1,7 +1,0 @@
-title="Destructors"
-
-points=5.0
-
-[adapters.gtest]
-name="DESTRUCTORS"
-testfile="destructors.cpp"

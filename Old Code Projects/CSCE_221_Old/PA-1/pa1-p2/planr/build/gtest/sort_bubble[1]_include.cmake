@@ -1,5 +1,0 @@
-if(EXISTS "/mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/sort_bubble[1]_tests.cmake")
-  include("/mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/build/gtest/sort_bubble[1]_tests.cmake")
-else()
-  add_test(sort_bubble_NOT_BUILT sort_bubble_NOT_BUILT)
-endif()

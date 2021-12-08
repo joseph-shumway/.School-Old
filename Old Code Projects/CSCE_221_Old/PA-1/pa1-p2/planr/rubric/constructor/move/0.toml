@@ -1,5 +1,0 @@
-title="Move Constructor 0"
-
-[adapters.gtest]
-name="MOVE0"
-testfile="move.cpp"

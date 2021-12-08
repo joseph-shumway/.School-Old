@@ -1,5 +1,0 @@
-title="Default constructors with one argument"
-
-[adapters.gtest]
-name="ONE_ARGUEMENT"
-testfile="one_arguement.cpp"

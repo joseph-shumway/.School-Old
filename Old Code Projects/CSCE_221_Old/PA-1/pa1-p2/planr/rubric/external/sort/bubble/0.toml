@@ -1,6 +1,0 @@
-title="Bubble Sort 0"
-points=3.0
-
-[adapters.gtest]
-name="BUBBLE0"
-testfile="sort_bubble.cpp"

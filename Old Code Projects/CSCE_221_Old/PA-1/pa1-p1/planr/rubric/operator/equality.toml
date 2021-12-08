@@ -1,9 +1,0 @@
-title="Operator =="
-
-description="""
-The operator ==(const Stress_ball& sb) returns true if sb’s color and size are the same as the color and size of the current stress ball this (object calling the operator).
-"""
-
-[adapters.gtest]
-name="OPERATOR_EQUALITY"
-testfile="equality.cpp"

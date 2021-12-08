@@ -1,7 +1,0 @@
-title="Move assignments"
-
-points=5.0
-
-[adapters.gtest]
-name="MOVE_ASSIGNMENTS"
-testfile="move_assignments.cpp"

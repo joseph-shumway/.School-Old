@@ -1,9 +1,0 @@
-title="Operator <<"
-
-description="""
-Outside of this class: overload the output operator operator<<(std::ostream& o, const Stress_ball& sb); to print a stress ball as a pair of color and size in this form: (color, size). Example: (red, small)
-"""
-
-[adapters.gtest]
-name="OPERATOR_INSERTION"
-testfile="insertion.cpp"

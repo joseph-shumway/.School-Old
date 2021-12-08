@@ -1,1 +1,0 @@
-/usr/bin/c++    -rdynamic CMakeFiles/make_union.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/planr/tests/make_union.cpp.o CMakeFiles/make_union.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Collection.cpp.o CMakeFiles/make_union.dir/mnt/c/.School/CSCE_221/PA-1/pa1-p2/src/Stress_ball.cpp.o  -o make_union  lib/libgtest_main.a lib/libgtest.a -lpthread 
