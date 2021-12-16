@@ -1,0 +1,6 @@
+make all -f "/mnt/c/.School/CSCE_221/PA-5/Makefile" --dry-run --always-make --keep-going --print-directory
+make: Entering directory '/mnt/c/.School/CSCE_221'
+make: Leaving directory '/mnt/c/.School/CSCE_221'
+ 
+/mnt/c/.School/CSCE_221/PA-5/Makefile:4: *** recipe commences before first target.  Stop.
+ 
