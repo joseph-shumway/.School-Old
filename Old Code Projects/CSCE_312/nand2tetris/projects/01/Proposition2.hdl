@@ -1,0 +1,28 @@
+// File: Proposition2.hdl
+// Author: Joseph Shumway
+// Date: 9/14/2021
+// Section: 504
+// E-mail: joseph.shumway@tamu.edu 
+// Description: implements the following logic as a circuit: 
+// --------------------------------------------------------------
+
+// If the file is 10MB, then the application is installed; 
+// else, the download will fail
+
+// P = The file is 10MB
+// Q = The application is installed
+// R = The download will fail
+
+// if p then q, else r
+
+CHIP Proposition1 {
+    IN p, q, r;
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+
+    // if p then q, else r
+    Mux(a=r, b=q, sel=p, out=out);
+    
+}

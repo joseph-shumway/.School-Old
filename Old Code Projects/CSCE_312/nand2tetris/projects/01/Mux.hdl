@@ -1,0 +1,46 @@
+// File: Mux.hdl
+// Author: Joseph Shumway
+// Date: 9/14/2021
+// Section: 504
+// E-mail: joseph.shumway@tamu.edu 
+// Description: implements the following logic as a circuit: Multiplexor
+// --------------------------------------------------------------
+
+// This file is part of www.nand2tetris.org
+// and the book "The Elements of Computing Systems"
+// by Nisan and Schocken, MIT Press.
+// File name: projects/01/Mux.hdl
+
+/** 
+ * Multiplexer:
+ * out = a if sel == 0
+ *       b otherwise
+ */
+
+CHIP Mux {
+    IN a, b, sel;
+    OUT out;
+
+    PARTS:
+    // Put your code here:
+    // Truth Table: 
+    // 0 0 0 | 0
+    // 0 0 1 | 0
+    // 0 1 0 | 1
+    // 0 1 1 | 1
+    // 1 0 0 | 0
+    // 1 0 1 | 1
+    // 1 1 0 | 0
+    // 1 1 1 | 1
+
+    // boolean expression:
+    // A'B + AC
+
+
+
+    Not(in=sel, out=wire1);
+    And(a=a, b=wire1, out=wire2);
+    And(a=b, b=sel, out=wire3);
+    Or(a=wire2, b=wire3, out=out);
+    
+}
