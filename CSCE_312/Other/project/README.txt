@@ -1,0 +1,1 @@
+This is a java program. You can compile and run it using "java cachesimulator.java input.txt"
